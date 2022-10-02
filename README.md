@@ -13,5 +13,5 @@ Platform | Support |
 Godot | Supported ✔️ |
 Unity | Supported ✔️ |
 Native iOS | Planned ➡️ |
-Unreal |  |
-Native Anroid |  |
+Unreal | Unsuported |
+Native Anroid | Unsuported |
