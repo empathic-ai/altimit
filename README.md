@@ -9,7 +9,7 @@ Altimit is a flexible set of tools and protocols for building an open Metaverse.
 Features of Altimit include:
 
 • Automatic Replication: Describe the data you want replicated and Altimit handles the rest.
-```
+```C#
 [AType]
 public class User
 {
