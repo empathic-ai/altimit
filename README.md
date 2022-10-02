@@ -26,7 +26,27 @@ public class User
 • Serialization: Efficiently cache data included in the replication system.
 
 • Seamless RPC: Calling remote services is as intuitive as calling local methods.
+```C#
+// The interface of a user server
+[AType]
+public interface IUserServer
+{
+    [AMethod]
+    Task<User> SignIn(string email, string password);
+    [AMethod]
+    Task Logout();
+}
 
+// Client-side code that interacts with the interface
+var myUser = await UserServer.SignIn(myEmail, myPassword);
+
+// Server-side code that implements the interface
+public async Task<User> SignIn(string email, string password)
+{
+  ... // Get user based on email and password
+  return user;
+}
+```
 • Distributed Computing: Built-in mesh networking for creating large-scale simulations.
 
 • Animation: Create animations and record network interactions for future playback.
