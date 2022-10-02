@@ -8,7 +8,7 @@ Altimit is designed from a flexible protocol for building an open Metaverse. Use
 
 Altimit is currently compatible with Godot and Unity.
 
- | #1 | 
---- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Godot | X | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
-Unity | X | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269
+ | #1 
+--- | --- 
+Godot | X 
+Unity | X 
