@@ -28,7 +28,7 @@ Altimit's Engine is built on top of the Godot Engine, leveraging its cross-platf
 
 ⚠️ Whenever possible, developers are highly encouraged to contribute to the main branch of Godot or this repository of plugins, rather than contributing to Altimit's fork of the Godot Engine! This helps limit fragmentation between projects.
 
-## Plugins
+## Compatibility / Plugins
 
 Altimit is available as a plugin for Godot, Unity, native Windows and Linux, with support planned for native macOS and iOS development tools in the near future.
 
