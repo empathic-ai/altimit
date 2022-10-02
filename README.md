@@ -14,7 +14,7 @@ Features of Altimit include:
 
 • Distributed computing: Built-in mesh networking for creating large-scale simulations.
 
-• Animation: Record network interactions for future playback and create animations in other contexts.
+• Animation: Record network interactions for future playback and create animations.
 
 • User Interfaces: Easily create complex, scalable, platform-agnostic user interfaces.
 
