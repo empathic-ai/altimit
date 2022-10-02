@@ -1,6 +1,6 @@
 ![Altimit logo](/logo.png)
 
-<i>Note: I'm in the process of open-sourcing this project. This repository will evolve over the next few weeks.</i>
+<i>Note: I'm in the process of open-sourcing this project. This repository will evolve significantly over the next few weeks.</i>
 
 ## Altimit
 
