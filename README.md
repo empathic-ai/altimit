@@ -24,7 +24,7 @@ Unlike [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omnivers
 
 ## The Engine
 
-Altimit's Engine is built on top of the Godot Engine, leveraging its cross-platform support and open architecture. It's a fork of the main branch of the Godot Engine with some additional features and optimizations relevant to Altimit. That said, <b>we encourage developers to contribute to the main branch of Godot whenever possible rather than this one.</b> Also, you can still reap most of the benefits of Altimit by using the Godot engine + Altimit as a plugin.
+Altimit's Engine is built on top of the Godot Engine, leveraging its cross-platform support and open architecture. It's a fork of the main branch of the Godot Engine with some additional features and optimizations relevant to Altimit. That said, <b>we encourage developers to contribute to the main branch of Godot rather than this one.</b> Also, you can still reap most of the benefits of Altimit by using the Godot engine + Altimit as a plugin.
 
 ## Plugins
 
