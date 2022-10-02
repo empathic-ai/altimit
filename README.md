@@ -20,7 +20,7 @@ In Altimit, every interaction boils down to <b>data and data changes</b>. This b
 
 <i>The logical symbol ∀ is used to represent universal quantification in predicate logic, where it is typically read as "for all".</i>
 
-Unlike [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omniverse_License_Agreement.html) Metaverse frameworks, Altimit is entirely free and open source under the MIT License. Anyone is welcome to use and contribute to the engine. The goal of this project—if there is one—is to create super accessible and useful Metaverse tools for all developers and end-users. Let's make the future connected, and let's make it beautiful.
+Unlike [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omniverse_License_Agreement.html) Metaverse frameworks, Altimit is entirely free and open source under the MIT License. Anyone is welcome to use and contribute to the engine. The goal of this project—if there is one—is to a create super accessible and useful Metaverse framework for all developers and end-users. Let's make the future connected, and let's make it beautiful.
 
 ## The Engine
 
