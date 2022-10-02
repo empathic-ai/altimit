@@ -6,7 +6,7 @@ Altimit is a flexible set of tools and protocols for building an open Metaverse.
 
 Altimit is a networking library. But it is also a set of tools built <i>around</i> that library to interface with foreign applications in a maximally useful way.
 
-In Altimit, every interaction boils down to <b>data and data changes</b>. This basic principal is integral to Altimit's elasticity—enabling it to be compatible with a plethora of third-party frameworks.
+In Altimit, every interaction boils down to <b>data and data changes</b>. This basic principal is integral to Altimit's elasticity—enabling it to be compatible with a plethora of third-party toolchains.
 
 ## Opening the Metaverse
 
