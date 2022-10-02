@@ -16,7 +16,7 @@ Altimit is free for anyone to use and contribute to. The goal of this project—
 
 ## Compatibility
 
-Altimit is currently compatible with Godot, Unity and native Windows development tools, with support planned for native macOS and iOS in the near future.
+Altimit is currently compatible with Godot, Unity and native Windows, with support planned for native macOS and iOS in the near future.
 
 Platform | Support |
 --- | --- | 
