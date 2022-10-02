@@ -10,6 +10,6 @@ Altimit is currently compatible with Godot and Unity.
 
 Platform | Support |
 --- | --- | 
-Godot | Full ✔️ |
-Unity | Full ✔️ |
+Godot | Supported ✔️ |
+Unity | Supported ✔️ |
 Native iOS | Planned ➡️ |
