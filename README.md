@@ -14,7 +14,7 @@ Features of Altimit include:
 
 • User Interfaces: Easily create complex, scalable, platform-agnostic user interfaces.
 
-In Altimit, every interaction boils down to <b>data and data changes</b>. This basic notion is integral to Altimit's elasticity—enabling it to be compatible with a plethora of third-party editors and frameworks.
+In Altimit, every interaction boils down to <b>data and data changes</b>. This basic notion is integral to Altimit's elasticity—enabling it to play nice with a plethora of third-party editors and frameworks.
 
 ## Opening the Metaverse
 
