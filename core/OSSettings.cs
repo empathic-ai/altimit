@@ -21,13 +21,6 @@ namespace Altimit
                 return "https://" + MasterURL + "/";
             }
         }
-        public static string DatabaseURL
-        {
-            get
-            {
-                return "Server=" + MasterURL + ";Database=Meridian;Uid=root;Pwd='Western1';";
-            }
-        }
 
         public const string MasterURL = "localhost";//"meridianvr.ddns.net";// "meridianvr.ddns.net";//"meridianvr.com"; //"216.99.113.162";
 
