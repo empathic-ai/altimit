@@ -4,9 +4,9 @@
 
 Altimit is designed on top of a flexible protocol for building an open Metaverse. Altimit can be used as an engine for creating your own metaverse application, or as a plugin in your engine of choice.
 
-In Altimit, every interaction boils down to <b>data and data changes</b>. This simple starting point is the basis for Altimit's design—enabling it to be maximally flexible and compatible with existing protocols.
+Essentially, Altimit is a networking plugin. But it is also a set of tools built around that plugin to interface with other applications in a very flexible and useful way.
 
-Essentially, Altimit is a networking plugin. But it is also a set of tools built around that plugin to interface with other applications in a flexible way.
+In Altimit, every interaction boils down to <b>data and data changes</b>. This simple starting point is the basis for Altimit's design—enabling it to be maximally flexible and compatible with existing protocols.
 
 Ideally, developers don't even have to <i>think</i> about using Altimit—they can just plug into their toolchain to access it's features.
 
