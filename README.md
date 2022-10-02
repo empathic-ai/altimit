@@ -25,7 +25,7 @@ public class User
 ```
 • Serialization: Efficiently cache data included in the replication system.
 
-• Seamless RPC: Calling remote services is as intuitive as calling local methods.
+• Seamless RPC: Calling methods on remote classes is as intuitive as calling methods on local ones.
 ```C#
 // The interface of a user server
 [AType]
