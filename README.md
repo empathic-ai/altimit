@@ -61,7 +61,7 @@ var signInView = new Canvas().Hold(
 ```
 • <b>Voice and Video</b>: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
 
-<i>As of now, C# is the only supported language. This may change.</i>
+<i>As of now, C# is the only supported language.</i>
 
 In Altimit, every interaction boils down to <b>data and data changes</b>. This basic notion is integral to Altimit's elasticity—enabling it to play nice with a plethora of third-party editors and frameworks.
 
@@ -86,6 +86,11 @@ Native iOS | Planned ➡️ |
 Native Android | Pending  |
 Unreal | Pending |
 Blender | Pending |
+
+Language | Support |
+--- | --- | 
+C# | Supported ✔️ |
+Swift | Planned ➡️ |
 
 ## The Engine
 
