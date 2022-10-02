@@ -12,13 +12,13 @@ Features of Altimit include:
 
 • Serialization: Efficiently cache data included in the replication system.
 
-• Distributed computing: Built-in mesh networking for creating large-scale simulations.
+• Distributed Computing: Built-in mesh networking for creating large-scale simulations.
 
 • Animation: Create animations and record network interactions for future playback.
 
 • User Interfaces: Easily create complex, scalable, platform-agnostic user interfaces.
 
-• Voice and Video streaming: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
+• Voice and Video: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
 
 In Altimit, every interaction boils down to <b>data and data changes</b>. This basic notion is integral to Altimit's elasticity—enabling it to play nice with a plethora of third-party editors and frameworks.
 
