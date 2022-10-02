@@ -6,6 +6,8 @@ Altimit is designed on top of a flexible protocol for building an open Metaverse
 
 In Altimit, every interaction boils down to <b>data and data changes</b>. This simple starting point is the basis for Altimit's design—enabling it to be maximally flexible and compatible with existing protocols.
 
+Ideally, developers don't even have to <i>think</i> about using Altimit—they can just plug into their toolchain to interface with other applications.
+
 ## Open Source
 
 <i>The logical symbol ∀ is used to represent universal quantification in predicate logic, where it is typically read as "for all".</i>
