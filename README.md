@@ -8,7 +8,7 @@ Altimit is a networking library. But it is also a set of tools built <i>around</
 
 In Altimit, every interaction boils down to <b>data and data changes</b>. This grounds Altimit's design—enabling it to be maximally compatible with conventional frameworks and protocols.
 
-Ideally, developers don't even have to think about using Altimit—they can just plug into their toolchain to access the Metaverse.
+Developers shouldn't have to think about using Altimit—they should be able to just plug into their toolchain to access the Metaverse.
 
 ## Open Source
 
