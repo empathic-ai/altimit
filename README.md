@@ -1,6 +1,6 @@
 ![Altimit logo](/logo.png)
 
-## Altimit Engine
+## Altimit
 
 Altimit is a flexible set of tools and protocols for building an open Metaverse. You can use Altimit as an engine for creating your own desktop/AR/VR application, or as a plugin for creating a Metaverse application in your favorite game engine or IDE. Altimit allows your application to seamlessly connect with other applications to create a unified experience.
 
@@ -15,6 +15,10 @@ Features of Altimit include:
 • User Interfaces: Easily create complex, scalable, platform-agnostic user interfaces.
 
 In Altimit, every interaction boils down to <b>data and data changes</b>. This basic notion is integral to Altimit's elasticity—enabling it to be compatible with a plethora of third-party editors and frameworks.
+
+## The Engine
+
+Altimit's Engine is built on top of the Godot engine, leveraging its cross-platform support and open architecture.
 
 ## Opening the Metaverse
 
