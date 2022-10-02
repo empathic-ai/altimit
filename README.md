@@ -8,7 +8,7 @@ Altimit is a networking library. But it is also a set of features built <i>aroun
 
 • Distributed computing: Built-in mesh networking for deploying large-scale worlds.
 
-• Serialization: Cache data replicated across the network.
+• Serialization: Efficiently cache network data.
 
 • Recording/Animations: Record network interactions for future playback.
 
