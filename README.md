@@ -54,9 +54,9 @@ public async Task<User> SignIn(string email, string password)
 • <b>User Interfaces</b>: Easily create complex, scalable, platform-agnostic user interfaces.
 ```C#
 var signInView = new Canvas().Hold(
-    new TextInput() { Placeholder = "Email" },
-    new TextInput() { Placeholder = "Password", InputType = InputType.Password },
-    new TextButton() { Label = "Sign In" }
+    new InputField() { Placeholder = "Email" },
+    new InputField() { Placeholder = "Password", InputType = InputType.Password },
+    new Button() { Label = "Sign In" }
 );
 ```
 • <b>Voice and Video</b>: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
