@@ -10,7 +10,7 @@ Features of Altimit include:
 
 • Automatic Replication: Describe the data you want replicated and Altimit handles the rest.
 
-• Serialization: Efficiently cache data plugged into the replication system.
+• Serialization: Efficiently cache data included in the replication system.
 
 • Distributed computing: Built-in mesh networking for creating large-scale simulations.
 
