@@ -6,7 +6,9 @@ Altimit is designed on top of a flexible protocol for building an open Metaverse
 
 In Altimit, every interaction boils down to <b>data and data changes</b>. This simple starting point is the basis for Altimit's design—enabling it to be maximally flexible and compatible with existing protocols.
 
-Ideally, developers don't even have to <i>think</i> about using Altimit—they can just plug into their toolchain to have prescence on the Metaverse.
+Essentially, Altimit is a networking plugin. But it is also a set of tools built around that plugin to interface with other applications in a flexible way.
+
+Ideally, developers don't even have to <i>think</i> about using Altimit—they can just plug into their toolchain to access it's features.
 
 ## Open Source
 
