@@ -28,7 +28,7 @@ Unlike [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omnivers
 
 ## Compatibility / Plugins
 
-Altimit is available as a plugin for Godot, Unity, native Windows and Linux, with support planned for native macOS and iOS development tools in the near future. If you'd like to see support for another platform, please consider contributing to the project!
+Altimit is available as a plugin for Godot, Unity, native Windows and Linux, with support planned for native macOS and iOS development tools in the near future. If you'd like to see support for another platform, please consider contributing to the project.
 
 Platform | Support |
 --- | --- | 
