@@ -37,10 +37,10 @@ public interface IUserServer
     Task Logout();
 }
 
-// Client-side code that interacts with the server interface
+// On client:
 var myUser = await UserServer.SignIn(myEmail, myPassword);
 
-// Server-side code that implements the interface
+// On server:
 public async Task<User> SignIn(string email, string password)
 {
   ... // Get user based on email and password
