@@ -18,7 +18,7 @@ In Altimit, every interaction boils down to <b>data and data changes</b>. This b
 
 ## The Engine
 
-Altimit's Engine is built on top of the Godot engine, leveraging its cross-platform support and open architecture.
+Altimit's Engine is built on top of Godot, leveraging its cross-platform support and open architecture.
 
 ## Opening the Metaverse
 
