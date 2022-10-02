@@ -8,7 +8,7 @@ Features of Altimit include:
 
 • Distributed computing: Built-in mesh networking for creating large-scale simulations.
 
-• Serialization: Efficiently cache network data.
+• Serialization: Efficiently cache data for game and business logic.
 
 • Animation: Record network interactions for future playback and create animations for other uses.
 
