@@ -22,12 +22,6 @@ In Altimit, every interaction boils down to <b>data and data changes</b>. This b
 
 Unlike [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omniverse_License_Agreement.html) Metaverse frameworks, Altimit is entirely free and open source under the MIT License. Anyone is welcome to use and contribute to the engine. The goal of this project—if there is one—is to a create super accessible and useful Metaverse framework for all developers and end-users. Let's make the future connected, and let's make it beautiful.
 
-## The Engine
-
-Altimit's Engine is built on top of the Godot Engine, leveraging its cross-platform support and open architecture. It's a fork of the main branch of the Godot Engine with a few additional features and optimizations to provide the best possible experience of Altimit.
-
-⚠️ Whenever possible, developers are highly encouraged to contribute to the main branch of Godot or this repository of plugins, rather than contributing to Altimit's fork of the Godot Engine! This helps limit fragmentation between projects.
-
 ## Compatibility / Plugins
 
 Altimit is available as a plugin for Godot, Unity, native Windows and Linux, with support planned for native macOS and iOS development tools in the near future.
@@ -43,3 +37,9 @@ Native iOS | Planned ➡️ |
 Native Android | Pending  |
 Unreal | Pending |
 Blender | Pending |
+
+## The Engine
+
+Altimit's Engine is built on top of the Godot Engine, leveraging its cross-platform support and open architecture. It's a fork of the main branch of the Godot Engine with a few additional features and optimizations to provide the best possible experience of Altimit.
+
+Whenever possible, developers are highly encouraged to contribute to the main branch of Godot or this repository of plugins, rather than contributing to Altimit's fork of the Godot Engine! This helps limit fragmentation between projects.
