@@ -6,7 +6,7 @@ The logical symbol ∀ is used to represent universal quantification in predicat
 
 Altimit is designed from a flexible protocol for building an open Metaverse. Use Altimit as an engine for creating your own metaverse application, or as a plugin in your development environment of choice.
 
-Altimit is currently compatible with Godot, Unity and native Windows development tools, with support planned for native macOS and iOS in the near future.
+Altimit is currently compatible with Godot, Unity and native Windows development tools, with support planned for native macOS and iOS development tools in the near future.
 
 Platform | Support |
 --- | --- | 
