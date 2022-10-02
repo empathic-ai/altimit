@@ -22,8 +22,8 @@ Platform | Support |
 --- | --- | 
 Godot | Supported ✔️ |
 Unity | Supported ✔️ |
-Native Windows | Partial ✔️ |
-Native Linux | Partial ✔️ |
+Native Windows | Partial |
+Native Linux | Partial |
 Native macOS | Planned ➡️ |
 Native iOS | Planned ➡️ |
 Native Android | Pending |
