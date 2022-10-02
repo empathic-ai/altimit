@@ -18,6 +18,8 @@ Features of Altimit include:
 
 • User Interfaces: Easily create complex, scalable, platform-agnostic user interfaces.
 
+• Voice and Video streaming: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
+
 In Altimit, every interaction boils down to <b>data and data changes</b>. This basic notion is integral to Altimit's elasticity—enabling it to play nice with a plethora of third-party editors and frameworks.
 
 ## Opening the Metaverse
