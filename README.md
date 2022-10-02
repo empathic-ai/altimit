@@ -26,7 +26,7 @@ Altimit's Engine is built on top of Godot, leveraging its cross-platform support
 
 Unlike [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omniverse_License_Agreement.html) Metaverse frameworks, Altimit is entirely free and open source under the MIT License. Anyone is welcome to use and contribute to the engine. The goal of this project—if there is one—is to create super accessible and useful Metaverse tools for all developers and end-users. Let's make the future connected, and let's make it beautiful.
 
-## Compatibility
+## Plugins
 
 Altimit is currently compatible with Godot, Unity, native Windows and Linux, with support planned for native macOS and iOS development tools in the near future.
 
