@@ -12,7 +12,7 @@ In Altimit, every interaction boils down to <b>data and data changes</b>. This b
 
 <i>The logical symbol ∀ is used to represent universal quantification in predicate logic, where it is typically read as "for all".</i>
 
-Altimit is free for anyone to use and contribute to. The goal of this project—if there is one—is to create metaverse protocols that are maximally beneificial for developers and users. Let's make the future beautiful.
+Altimit is free for anyone to use and contribute to. The goal of this project—if there is one—is to create metaverse tools that are maximally beneificial for developers and users. Let's make the future beautiful.
 
 ## Compatibility
 
