@@ -12,7 +12,7 @@ Features of Altimit include:
 
 • Serialization: Efficiently cache data included in the replication system.
 
-• Seamless RPC: Calling remote services is as intuitive as local ones.
+• Seamless RPC: Calling remote services is as intuitive as calling local methods.
 
 • Distributed Computing: Built-in mesh networking for creating large-scale simulations.
 
