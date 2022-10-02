@@ -12,4 +12,4 @@ Platform | Support |
 --- | --- | 
 Godot | Full ✔️ |
 Unity | Full ✔️ |
-Native iOS | Planned ❗ |
+Native iOS | Planned ➡️ |
