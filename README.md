@@ -42,6 +42,6 @@ Blender | Pending |
 
 ## The Engine
 
-Altimit's Engine is an alternative to its plugins. Built on top of the Godot Engine, the Altimit Engine leverages its cross-platform support and open architecture. It's a fork of the main branch of the Godot Engine, with a few additional features and optimizations to provide the best possible experience of Altimit.
+Altimit's Engine is an alternative to its plugins. Built on top of the Godot Engine, the Altimit Engine combines Godot's cross-platform support and open architecture with Altimit's flexibility. It's a fork of the main branch of the Godot Engine, with a few additional features and optimizations to provide the best possible experience of Altimit.
 
 Note: Whenever possible, developers are highly encouraged to contribute to the main branch of Godot, rather than contributing to Altimit's fork of the Godot Engine. This helps limit fragmentation between projects.
