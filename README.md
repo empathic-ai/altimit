@@ -1,4 +1,4 @@
-[![Altimit logo](/logo.png)]
+![Altimit logo](/logo.png)
 
 ## Altimit
 
