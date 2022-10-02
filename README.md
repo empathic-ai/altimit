@@ -16,15 +16,15 @@ Features of Altimit include:
 
 In Altimit, every interaction boils down to <b>data and data changes</b>. This basic notion is integral to Altimit's elasticity—enabling it to be compatible with a plethora of third-party editors and frameworks.
 
-## The Engine
-
-Altimit's Engine is built on top of Godot, leveraging its cross-platform support and open architecture.
-
 ## Opening the Metaverse
 
 <i>The logical symbol ∀ is used to represent universal quantification in predicate logic, where it is typically read as "for all".</i>
 
 Unlike [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omniverse_License_Agreement.html) Metaverse frameworks, Altimit is entirely free and open source under the MIT License. Anyone is welcome to use and contribute to the engine. The goal of this project—if there is one—is to create super accessible and useful Metaverse tools for all developers and end-users. Let's make the future connected, and let's make it beautiful.
+
+## The Engine
+
+Altimit's Engine is built on top of Godot, leveraging its cross-platform support and open architecture.
 
 ## Plugins
 
