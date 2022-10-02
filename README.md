@@ -9,7 +9,20 @@ Altimit is a flexible set of tools and protocols for building an open Metaverse.
 Features of Altimit include:
 
 • Automatic Replication: Describe the data you want replicated and Altimit handles the rest.
-
+```
+[AType]
+public class User
+{
+  [AProperty]
+  public string FirstName { get; set; }
+  [AProperty]
+  public string LastName { get; set; }
+  [AProperty]
+  public string Email { get; set; }
+  [AProperty]
+  public string Password { get; set; }
+}
+```
 • Serialization: Efficiently cache data included in the replication system.
 
 • Seamless RPC: Calling remote services is as intuitive as calling local methods.
