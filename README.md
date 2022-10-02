@@ -34,6 +34,6 @@ Native Windows | Supported ✔️ |
 Native Linux | Supported ✔️ |
 Native macOS | Planned ➡️ |
 Native iOS | Planned ➡️ |
-Native Android | Pending ⚠️ |
-Unreal | Pending ⚠️ |
-Blender | Pending ⚠️ |
+Native Android | Pending  |
+Unreal | Pending |
+Blender | Pending |
