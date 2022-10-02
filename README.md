@@ -27,7 +27,7 @@ public class User
 
 • <b>Seamless RPC</b>: Calling methods on remote classes is as intuitive as calling methods on local ones.
 ```C#
-// The interface of a user server
+// The interface of a server
 [AType]
 public interface IUserServer
 {
@@ -37,7 +37,7 @@ public interface IUserServer
     Task Logout();
 }
 
-// Client-side code that interacts with the interface
+// Client-side code that interacts with the server interface
 var myUser = await UserServer.SignIn(myEmail, myPassword);
 
 // Server-side code that implements the interface
