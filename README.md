@@ -2,7 +2,7 @@
 
 ## Altimit Engine
 
-The logical symbol ∀ is used to represent universal quantification in predicate logic, where it is typically read as "for all".
+<i>The logical symbol ∀ is used to represent universal quantification in predicate logic, where it is typically read as "for all".</i>
 
 Altimit is designed from a flexible protocol for building an open Metaverse. Altimit can be used as an engine for creating your own metaverse application, or as a plugin in another development environment.
 
