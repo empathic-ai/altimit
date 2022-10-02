@@ -6,7 +6,7 @@ Altimit is a flexible set of tools and protocols for building an open Metaverse.
 
 Essentially, Altimit is a networking framework. But it is also a set of features built <i>around</i> that framework to interface with other systems in a maximally useful way. These features include:
 
-• Distributed computing: Built-in mesh networking for managing large-scale simulations.
+• Distributed computing: Built-in mesh networking for creating large-scale simulations.
 
 • Serialization: Efficiently cache network data.
 
