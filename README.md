@@ -28,7 +28,7 @@ Altimit's Engine is built on top of Godot, leveraging its cross-platform support
 
 ## Plugins
 
-Altimit is currently available as a plugin for Godot, Unity, native Windows and Linux, with support planned for native macOS and iOS development tools in the near future.
+Altimit is available as a plugin for Godot, Unity, native Windows and Linux, with support planned for native macOS and iOS development tools in the near future.
 
 Platform | Support |
 --- | --- | 
