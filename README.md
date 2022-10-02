@@ -43,7 +43,7 @@ var myUser = await UserServer.SignIn(myEmail, myPassword);
 // On server:
 public async Task<User> SignIn(string email, string password)
 {
-  ... // Get user based on email and password
+  ... // Return a user based on the provided email and password
   return user;
 }
 ```
