@@ -53,7 +53,7 @@ public async Task<User> SignIn(string email, string password)
 
 • <b>User Interfaces</b>: Easily create complex, scalable, platform-agnostic user interfaces.
 ```C#
-signInView = new Canvas().Hold(
+var signInView = new Canvas().Hold(
     new Input() { Placeholder = "Email" },
     new Input() { Placeholder = "Password", InputType = InputType.Password },
     new Button() { Label = "Sign In" }
