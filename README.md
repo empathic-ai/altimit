@@ -6,7 +6,7 @@
 
 Altimit is designed on top of a flexible protocol for building an open Metaverse. Altimit can be used as an engine for creating your own metaverse application, or as a plugin in another toolkit.
 
-In Altimit, every interaction boils down to <b>data and data changes</b>. This simple starting point is the basis for Altimit's architecutre--enabling it to be highly flexible and compatible with other protocols.
+In Altimit, every interaction boils down to <b>data and data changes</b>. This simple starting point is the basis for Altimit's architecutre—enabling it to be maximally flexible and compatible with other protocols.
 
 Altimit is currently compatible with Godot, Unity and native Windows development tools, with support planned for native macOS and iOS in the near future.
 
