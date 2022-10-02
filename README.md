@@ -10,7 +10,7 @@ Altimit is a networking library. But it is also a set of features built <i>aroun
 
 • Serialization: Efficiently cache network data.
 
-• Recording/Animations: Record network interactions for future playback.
+• Recording/Animations: Record network interactions for future playback and create animations for other uses.
 
 • User Interfaces: Easily create complex, scalable, platform-agnostic user interfaces.
 
