@@ -92,7 +92,7 @@ Language | Support |
 C# | Supported ✔️ |
 Swift | Planned ➡️ |
 C++ | Pending |
-Rust | Pending |
+Javascript | Pending |
 
 ## The Engine
 
