@@ -1,6 +1,6 @@
 ![Altimit logo](/logo.png)
 
-Note from Lead: I'm in the process of open-sourcing this project. As of this writing it is not functional, but that will change over the next few weeks.
+<i>Note: I'm in the process of open-sourcing this project. As of this writing it is not functional, but that will change over the next few weeks.</i>
 
 ## Altimit
 
