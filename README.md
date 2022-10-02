@@ -47,7 +47,7 @@ public async Task<User> SignIn(string email, string password)
   return user;
 }
 ```
-• <b>Distributed Computing</b>: Built-in mesh networking for creating large-scale simulations.
+• <b>Distributed Computing</b>: Built-in mesh networking enables large-scale simulations.
 
 • <b>Animation</b>: Create animations and record network interactions for future playback.
 
