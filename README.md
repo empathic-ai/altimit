@@ -8,7 +8,7 @@ Altimit is a networking library. But it is also a set of tools built <i>around</
 
 In Altimit, every interaction boils down to <b>data and data changes</b>. This grounds Altimit's design—enabling it to be compatible with a plethora of third-party frameworks and protocols.
 
-## Open Source
+## An Open Metaverse
 
 <i>The logical symbol ∀ is used to represent universal quantification in predicate logic, where it is typically read as "for all".</i>
 
