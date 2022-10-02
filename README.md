@@ -23,7 +23,7 @@ public class User
   public string Password { get; set; }
 }
 ```
-• <b>Serialization</b>: Efficiently cache data included in the replication system.
+• <b>Serialization</b>: Data is automatically cached locally and remotely.
 
 • <b>Seamless RPC</b>: Calling methods on remote classes is as intuitive as calling methods on local ones.
 ```C#
