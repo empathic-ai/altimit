@@ -8,7 +8,7 @@ Altimit is a flexible set of tools and protocols for building an open Metaverse.
 
 Features of Altimit include:
 
-• Automatic Replication: Describe the data you want replicated and Altimit handles the rest.
+• <b>Automatic Replication</b>: Describe the data you want replicated using attributes. Altimit handles the rest.
 ```C#
 [AType]
 public class User
@@ -23,9 +23,9 @@ public class User
   public string Password { get; set; }
 }
 ```
-• Serialization: Efficiently cache data included in the replication system.
+• <b>Serialization</b>: Efficiently cache data included in the replication system.
 
-• Seamless RPC: Calling methods on remote classes is as intuitive as calling methods on local ones.
+• <b>Seamless RPC</b>: Calling methods on remote classes is as intuitive as calling methods on local ones.
 ```C#
 // The interface of a user server
 [AType]
@@ -47,13 +47,19 @@ public async Task<User> SignIn(string email, string password)
   return user;
 }
 ```
-• Distributed Computing: Built-in mesh networking for creating large-scale simulations.
+• <b>Distributed Computing</b>: Built-in mesh networking for creating large-scale simulations.
 
-• Animation: Create animations and record network interactions for future playback.
+• <b>Animation</b>: Create animations and record network interactions for future playback.
 
-• User Interfaces: Easily create complex, scalable, platform-agnostic user interfaces.
-
-• Voice and Video: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
+• <b>User Interfaces</b>: Easily create complex, scalable, platform-agnostic user interfaces.
+```C#
+signInView = new Canvas().Hold(
+    new Input() { Placeholder = "Email" },
+    new Input() { Placeholder = "Password", InputType = InputType.Password },
+    new Button() { Label = "Sign In" }
+);
+```
+• <b>Voice and Video</b>: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
 
 In Altimit, every interaction boils down to <b>data and data changes</b>. This basic notion is integral to Altimit's elasticity—enabling it to play nice with a plethora of third-party editors and frameworks.
 
