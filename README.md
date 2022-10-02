@@ -2,7 +2,7 @@
 
 ## Altimit Engine
 
-Altimit is a flexible set of tools and protocols for building an open Metaverse. Altimit can be used as an engine for creating your own metaverse application or as a plugin in your favorite game engine or IDE.
+Altimit is a flexible set of tools and protocols for building an open Metaverse. Altimit can be used as an engine for creating your own metaverse application, or as a plugin to create your application in your favorite game engine or IDE.
 
 Altimit is a networking library. But it is also a set of tools built <i>around</i> that library to interface with foreign applications in a maximally useful way.
 
