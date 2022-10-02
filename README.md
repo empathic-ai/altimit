@@ -16,3 +16,4 @@ Native Windows | Supported ✔️ |
 Native macOS | Planned ➡️ |
 Native iOS | Planned ➡️ |
 Unreal | Pending |
+Blender | Pending |
