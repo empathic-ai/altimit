@@ -23,17 +23,17 @@ In Altimit, every interaction boils down to <b>data and data changes</b>. This b
 public class User
 {
 
-  [AProperty]
-  public string FirstName { get; set; }
+    [AProperty]
+    public string FirstName { get; set; }
   
-  [AProperty]
-  public string LastName { get; set; }
+    [AProperty]
+    public string LastName { get; set; }
   
-  [AProperty]
-  public string Email { get; set; }
+    [AProperty]
+    public string Email { get; set; }
   
-  [AProperty]
-  public string Password { get; set; }
+    [AProperty]
+    public string Password { get; set; }
   
 }
 ```
@@ -61,23 +61,23 @@ public interface IServer
 // On the client:
 public class Client {
 
-  public async void SignIn(string email, string password)
-  {
-    var myUser = await server.SignIn(email, password);
-    ...
-  }
+    public async void SignIn(string email, string password)
+    {
+        var myUser = await server.SignIn(email, password);
+        ...
+    }
 
 }
 
 // On the server:
 public class Server : IServer {
 
-  public async Task<User> SignIn(string email, string password)
-  {
-    ... // Return a user based on the provided email and password
-    return user;
-  }
-  
+    public async Task<User> SignIn(string email, string password)
+    {
+        ... // Return a user based on the provided email and password
+        return user;
+    }
+ 
 }
 ```
 ### Distributed Computing
@@ -96,28 +96,28 @@ Easily create complex, scalable, platform-agnostic user interfaces.
 [AType]
 class SignInView : View {
 
-  [AProperty]
-  string email { get; set; } = "";
+    [AProperty]
+    string email { get; set; } = "";
   
-  [AProperty]
-  string password { get; set; } = "";
+    [AProperty]
+    string password { get; set; } = "";
 
-  protected override void Render()
-  {
-   AddChildren(
-    new VList().AddChildren(
-     new TextInput() { Placeholder = "Email" }.BindProperty(this, x=>x.email),
-     new TextInput() { Placeholder = "Password", InputType = InputType.Password }.BindProperty(this, x=>x.password),
-     new Button() { Label = "Sign In", OnClick = OnSignIn }
-    )
-   );
-  }
-  
-  void OnSignIn()
-  {
-    client.SignIn(email, password);
-  }
-
+    protected override void Render()
+    {
+        AddChildren(
+            new VList().AddChildren(
+                new TextInput() { Placeholder = "Email" }.BindProperty(this, x=>x.email),
+                new TextInput() { Placeholder = "Password", InputType = InputType.Password }.BindProperty(this, x=>x.password),
+                new Button() { Label = "Sign In", OnClick = OnSignIn }
+            )
+        );
+    }
+    
+    void OnSignIn()
+    {
+        client.SignIn(email, password);
+    }
+    
 }
 
 ```
