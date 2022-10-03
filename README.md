@@ -86,7 +86,7 @@ Built-in mesh networking enables large-scale simulations and versatile network a
 
 ### Animation
  
-Create animations and record simulations for future playback.
+Create animations by specificying or recording changes in replicated data. Play it back any time.
 
 ### User Interfaces
  
