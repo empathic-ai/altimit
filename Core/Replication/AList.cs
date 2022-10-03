@@ -5,64 +5,6 @@ using System.Collections.Generic;
 
 namespace Altimit
 {
-    [AType]
-    public class ADictionary<TKey, TValue> : Dictionary<TKey, TValue>, IObservableList
-    {
-        public event ElementAddedEventHandler ElementAdded;
-        public event ElementRemovedEventHandler ElementRemoved;
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public new TValue this[TKey key] {
-            get => base[key];
-            set {
-                if (!base[key].Equals(value))
-                {
-                    var oldValue = base[key];
-                    base[key] = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("", oldValue));
-                }
-            }
-        }
-
-        public new void Add(TKey key, TValue value)
-        {
-            base.Add(key, value);
-            ElementAdded?.Invoke(this, new ElementEventArgs(-1, new KeyValuePair<TKey, TValue>(key, value)));
-        }
-
-        public new bool Remove(TKey key)
-        {
-            if (ContainsKey(key))
-            {
-                var value = this[key];
-                base.Remove(key);
-                ElementRemoved?.Invoke(this, new ElementEventArgs(-1, new KeyValuePair<TKey, TValue>(key, value)));
-                return true;
-            }
-            return false;
-        }
-    }
-
-    public class ElementEventArgs : EventArgs
-    {
-        public int index;
-        public object element;
-        public ElementEventArgs(int index, object item)
-        {
-            this.index = index;
-            this.element = item;
-        }
-    }
-
-    public delegate void ElementAddedEventHandler(object source, ElementEventArgs e);
-    public delegate void ElementRemovedEventHandler(object source, ElementEventArgs e);
-    public delegate void ListChangedEventHandler(object source, ElementEventArgs e);
-    public delegate void ListClearedEventHandler(object source, EventArgs e);
-
-    public delegate void HashsetItemAddedEventHandler<T>(object source, T e);
-    public delegate void HashsetItemRemovedEventHandler<T>(object source, T e);
-    public delegate void HashsetClearedEventHandler(object source, EventArgs e);
-
     public interface IObservableList : IEnumerable, INotifyPropertyChanged
     {
         public int Count { get; }
@@ -82,51 +24,6 @@ namespace Altimit
         /// Fired when list is cleared
         /// </summary>
         //public event ListClearedEventHandler ListCleared;
-    }
-
-    [AType]
-    public class AHashset<T> : HashSet<T>
-    {
-        public event HashsetItemRemovedEventHandler<T> ItemRemoved;
-        public event HashsetItemAddedEventHandler<T> ItemAdded;
-
-        public event HashsetItemRemovedEventHandler<object> DynamicItemRemoved;
-        public event HashsetItemAddedEventHandler<object> DynamicItemAdded;
-        public event ListClearedEventHandler ListCleared;
-
-        [AMethod]
-        public new void Add(T item)
-        {
-            base.Add(item);
-            OnItemAdded(item);
-        }
-
-        public new bool Remove(T item)
-        {
-            var contains = Contains(item);
-            InternalRemove(item);
-            return contains;
-        }
-
-        [AMethod]
-        public void InternalRemove(T item)
-        {
-            base.Remove(item);
-            OnItemRemoved(item);
-        }
-
-        protected virtual void OnItemAdded(T e)
-        {
-            DynamicItemAdded?.Invoke(this, e);
-            ItemAdded?.Invoke(this, e);
-        }
-
-        protected virtual void OnItemRemoved(T e)
-        {
-            DynamicItemRemoved?.Invoke(this, e);
-            ItemRemoved?.Invoke(this, e);
-        }
-
     }
 
     [AType]

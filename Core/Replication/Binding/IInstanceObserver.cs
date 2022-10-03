@@ -2,6 +2,9 @@
 
 namespace Altimit
 {
+    /// <summary>
+    /// Observes an instance for property changes.
+    /// </summary>
     public interface IInstanceObserver
     {
         Action onInstanceRemoved { get; set; }
