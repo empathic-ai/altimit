@@ -111,8 +111,6 @@ class SignInView : View {
 ```
 • <b>Voice and Video</b>: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
 
-<i>As of now, C# is the only supported language.</i>
-
 </details>
 
 ## Opening the Metaverse
@@ -125,6 +123,8 @@ Unlike [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omnivers
 
 Altimit is available as a plugin for Godot, Unity, native Windows and native Linux. Support is planned for native macOS and native iOS in the near future. If you'd like to see support for another platform or language, please consider contributing to the project.
 
+ <i>As of now, C# is the only supported language.</i>
+ 
 Platform | Support |
 --- | --- | 
 Godot | Supported ✔️ |
