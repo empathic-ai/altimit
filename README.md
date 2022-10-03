@@ -82,7 +82,7 @@ public class Server : IServer {
 
 • <b>User Interfaces</b>: Easily create complex, scalable, platform-agnostic user interfaces.
 ```C#
-// Renders a sign-in screen for the user
+// Renders a sign-in screen on a client
 [AType]
 class SignInView : View {
 
