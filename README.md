@@ -15,7 +15,7 @@ In Altimit, every interaction boils down to <b>data and data changes</b>. This b
  
 ## Features
 
-<b>Intuitive Replication</b>:
+### Intuitive Replication
  
  Describe the data you want replicated using basic attributes or a fluent API. A replication system handles the rest:
 ```C#
