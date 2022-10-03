@@ -104,11 +104,13 @@ class SignInView : View {
 
   protected override void Render()
   {
-    Children = {
-        new TextInput() { Placeholder = "Email" }.BindProperty(this, x=>x.email),
-        new TextInput() { Placeholder = "Password", InputType = InputType.Password }.BindProperty(this, x=>x.password),
-        new Button() { Label = "Sign In", OnClick = OnSignIn }
-    };
+   AddChildren(
+    new VList().AddChildren(
+     new TextInput() { Placeholder = "Email" }.BindProperty(this, x=>x.email),
+     new TextInput() { Placeholder = "Password", InputType = InputType.Password }.BindProperty(this, x=>x.password),
+     new Button() { Label = "Sign In", OnClick = OnSignIn }
+    )
+   );
   }
   
   void OnSignIn()
