@@ -14,10 +14,8 @@ In Altimit, every interaction boils down to <b>data and data changes</b>. This b
  </summary>
  
 ## Features
- 
-Features include:
 
-• <b>Automatic Replication</b>: Describe the data you want replicated using basic attributes or a fluent API. Altimit's replication system handles the rest.
+<b>Automatic Replication</b>: Describe the data you want replicated using basic attributes or a fluent API. Altimit's replication system handles the rest.
 ```C#
 [AType]
 public class User
@@ -37,9 +35,9 @@ public class User
   
 }
 ```
-• <b>Serialization</b>: Data is automatically cached locally and remotely.
+<b>Serialization</b>: Data is automatically cached locally and remotely.
 
-• <b>Seamless RPCs</b>: Calling methods on remote classes is as intuitive as calling methods on local ones.
+<b>Seamless RPCs</b>: Calling methods on remote classes is as intuitive as calling methods on local ones.
 ```C#
 // The interface of a server
 [AType]
@@ -76,11 +74,11 @@ public class Server : IServer {
   
 }
 ```
-• <b>Distributed Computing</b>: Built-in mesh networking allows for large-scale simulations and complex interactions between applications.
+<b>Distributed Computing</b>: Built-in mesh networking allows for large-scale simulations and complex interactions between applications.
 
-• <b>Animation</b>: Create animations and record simulations for future playback.
+<b>Animation</b>: Create animations and record simulations for future playback.
 
-• <b>User Interfaces</b>: Easily create complex, scalable, platform-agnostic user interfaces.
+<b>User Interfaces</b>: Easily create complex, scalable, platform-agnostic user interfaces.
 ```C#
 // Renders a sign-in screen on a client
 [AType]
@@ -109,7 +107,7 @@ class SignInView : View {
 }
 
 ```
-• <b>Voice and Video</b>: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
+<b>Voice and Video</b>: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
 
 </details>
 
