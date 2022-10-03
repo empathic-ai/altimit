@@ -17,7 +17,7 @@ In Altimit, every interaction boils down to <b>data and data changes</b>. This b
 
 ### Intuitive Replication
  
- Describe the data you want synchronized between clients using basic attributes or a fluent API. Altimit's replication system will handle the rest.
+ Describe the data you want synchronized between applications using basic attributes or a fluent API. Altimit's replication system will handle the rest.
 ```C#
 [AType]
 public class User
