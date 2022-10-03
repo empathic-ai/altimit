@@ -1,4 +1,7 @@
 ![Altimit logo](/logo.png)
+<p align="center">
+    <img src="logo.png" width="400" alt="Altimit Engine logo">
+</p>
 
 <i>Note: This repository is being reorganized and will evolve significantly over the next few weeks.</i>
 
