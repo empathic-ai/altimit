@@ -13,7 +13,7 @@ In Altimit, every interaction boils down to <b>data and data changes</b>. This b
  Features
  </summary>
  
-## Features
+## Features Summary
  
 Features of Altimit include:
 
