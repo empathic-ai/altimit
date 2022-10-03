@@ -8,6 +8,7 @@ Altimit is a flexible set of tools and protocols for building an open Metaverse.
 
 <details>
   <summary>Features</summary>
+
   
 Features of Altimit include:
 
