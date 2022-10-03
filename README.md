@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="logo.png" width="400" alt="Altimit Logo">
+    <img src="logo.png" width="500" alt="Altimit Logo">
 </p>
 
 <i>Note: This repository is being reorganized and will evolve significantly over the next few weeks.</i>
