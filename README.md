@@ -146,6 +146,6 @@ Javascript | Pending |
 
 Altimit's Engine is an alternative to its plugins. Built on top of the Godot Engine, the Altimit Engine combines Godot's cross-platform support and open architecture with the utility of Altimit's framework. It's a fork of the main branch of the Godot Engine that includes additional features to provide the best possible experience of Altimit.
  
- Executables of the engine will be included at a later date.
+ Executables of the Altimit Engine will be released at a later date.
 
 <i>Note: Whenever possible, developers are encouraged to contribute to the main branch of Godot, rather than contributing directly to Altimit's fork of the Godot Engine. This helps limit fragmentation between the two projects.</i>
