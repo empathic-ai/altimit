@@ -13,14 +13,19 @@ Features of Altimit include:
 [AType]
 public class User
 {
+
   [AProperty]
   public string FirstName { get; set; }
+  
   [AProperty]
   public string LastName { get; set; }
+  
   [AProperty]
   public string Email { get; set; }
+  
   [AProperty]
   public string Password { get; set; }
+  
 }
 ```
 • <b>Serialization</b>: Data is automatically cached locally and remotely.
@@ -31,20 +36,35 @@ public class User
 [AType]
 public interface IUserServer
 {
+
     [AMethod]
     Task<User> SignIn(string email, string password);
+    
     [AMethod]
     Task Logout();
+    
 }
 
-// On client:
-var myUser = await UserServer.SignIn(myEmail, myPassword);
+// On the client:
+public class UserClient {
 
-// On server:
-public async Task<User> SignIn(string email, string password)
-{
-  ... // Return a user based on the provided email and password
-  return user;
+  public async void SignIn(string email, string password)
+  {
+    var myUser = await UserServer.SignIn(email, password);
+    ...
+  }
+
+}
+
+// On the server:
+public class UserServer : IUserServer {
+
+  public async Task<User> SignIn(string email, string password)
+  {
+    ... // Return a user based on the provided email and password
+    return user;
+  }
+  
 }
 ```
 • <b>Distributed Computing</b>: Built-in mesh networking enables large-scale simulations.
@@ -53,11 +73,32 @@ public async Task<User> SignIn(string email, string password)
 
 • <b>User Interfaces</b>: Easily create complex, scalable, platform-agnostic user interfaces.
 ```C#
-var signInView = new Canvas().Hold(
-    new TextInput() { Placeholder = "Email" },
-    new TextInput() { Placeholder = "Password", InputType = InputType.Password },
-    new Button() { Label = "Sign In" }
-);
+// Renders a sign-in screen for the user
+[AType]
+class SignInView : View {
+
+  [AProperty]
+  string email { get; set; } = "";
+  
+  [AProperty]
+  string password { get; set; } = "";
+
+  protected override void Render()
+  {
+    this.Hold(
+        new TextInput() { Placeholder = "Email" }.BindProperty(this, x=>x.email),
+        new TextInput() { Placeholder = "Password", InputType = InputType.Password }.BindProperty(this, x=>x.password),
+        new Button() { Label = "Sign In", OnClick = OnSignIn }
+    );
+  }
+  
+  void OnSignIn()
+  {
+    client.SignIn(email, password);
+  }
+
+}
+
 ```
 • <b>Voice and Video</b>: Altimit uses WebRTC to enable peer to peer connections, including voice and video.
 
