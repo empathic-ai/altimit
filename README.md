@@ -10,7 +10,9 @@ Altimit is a flexible set of tools and protocols for building an open Metaverse.
  <summary>
  Features
  </summary>
-
+ 
+## Features
+ 
 Features of Altimit include:
 
 • <b>Automatic Replication</b>: Describe the data you want replicated using basic attributes or a fluent API. Altimit handles the rest.
