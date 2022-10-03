@@ -10,10 +10,10 @@ In Altimit, every interaction boils down to <b>data and data changes</b>. This b
 
 <details>
  <summary>
- Features
+ Features Summary
  </summary>
  
-## Features Summary
+## Features
  
 Features of Altimit include:
 
