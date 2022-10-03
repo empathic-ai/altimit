@@ -76,7 +76,7 @@ public class Server : IServer {
   
 }
 ```
-• <b>Distributed Computing</b>: Built-in mesh networking allows for large-scale simulations and complex networking configurations.
+• <b>Distributed Computing</b>: Built-in mesh networking allows for large-scale simulations and complex interactions between applications.
 
 • <b>Animation</b>: Create animations and record network interactions for future playback.
 
