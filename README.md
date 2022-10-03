@@ -7,8 +7,9 @@
 Altimit is a flexible set of tools and protocols for building an open Metaverse. You can use Altimit as an engine for creating your own desktop/AR/VR application, or as a plugin for creating a Metaverse application in your favorite game engine or IDE. Altimit allows your application to seamlessly connect with other applications to create a cohesive experience.
 
 <details>
- 
-  <summary>Features</summary>
+ <summary>
+ Features
+ </summary>
 
 Features of Altimit include:
 
