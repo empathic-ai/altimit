@@ -1,4 +1,4 @@
-﻿namespace Altimit.Unity.UI
+﻿namespace Altimit.UI
 {
     public enum StretchType
     {

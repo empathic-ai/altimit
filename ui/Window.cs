@@ -1,5 +1,4 @@
-﻿using Altimit.Unity.UI;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -21,7 +20,7 @@ using Sprite = Godot.Texture;
 #endif
 //using UnityEngine.InputSystem;
 
-namespace Altimit.Unity.UI
+namespace Altimit.UI
 {
 #if UNITY_5_3_OR_NEWER
     [ExecuteInEditMode]
@@ -87,6 +86,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return null;
 #endif
+            return null;
         }
 
         protected virtual void Render()

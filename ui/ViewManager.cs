@@ -20,13 +20,13 @@ using Component = Godot.Node;
 using System.Linq;
 using System;
 
-namespace Altimit.Unity.UI
+namespace Altimit.UI
 {
 #if UNITY_5_3_OR_NEWER
     [ExecuteInEditMode]
 #endif
 
-    public partial class ViewManager : Component
+    public partial class ViewManager : Node
     {
         public Window Window;
         public List<View> ViewHistory = new List<View>();

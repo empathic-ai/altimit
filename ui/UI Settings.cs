@@ -7,8 +7,9 @@ using Texture = UnityEngine.Sprite;
 #elif GODOT
 using Godot;
 #endif
+using Altimit.UI;
 
-namespace Altimit.Unity.UI
+namespace Altimit.UI
 {
     public partial class AUI
     {
@@ -158,7 +159,7 @@ namespace Altimit.Unity.UI
             }
         }
 
-        public static Texture InputFieldBackground
+        public static Sprite InputFieldBackground
         {
             get
             {

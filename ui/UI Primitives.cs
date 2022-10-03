@@ -24,75 +24,9 @@ using Node = Godot.Node;
 using Font = Godot.Font;
 using Toggle = Godot.Button;
 using Sprite = Godot.Texture;
-public enum InputType
-{
-    Standard = 0,
-    AutoCorrect = 1,
-    Password = 2
-}
-public enum ImageType
-{
-    Simple = 0,
-    Sliced = 1,
-    Tiled = 2,
-    Filled = 3
-}
-[Flags]
-public enum FontStyles
-{
-    Normal = 0,
-    Bold = 1,
-    Italic = 2,
-    Underline = 4,
-    LowerCase = 8,
-    UpperCase = 16,
-    SmallCaps = 32,
-    Strikethrough = 64,
-    Superscript = 128,
-    Subscript = 256,
-    Highlight = 512
-}
-public enum TextAnchor {
-    //
-    // Summary:
-    //     Text is anchored in upper left corner.
-    UpperLeft = 0,
-    //
-    // Summary:
-    //     Text is anchored in upper side, centered horizontally.
-    UpperCenter = 1,
-    //
-    // Summary:
-    //     Text is anchored in upper right corner.
-    UpperRight = 2,
-    //
-    // Summary:
-    //     Text is anchored in left side, centered vertically.
-    MiddleLeft = 3,
-    //
-    // Summary:
-    //     Text is centered both horizontally and vertically.
-    MiddleCenter = 4,
-    //
-    // Summary:
-    //     Text is anchored in right side, centered vertically.
-    MiddleRight = 5,
-    //
-    // Summary:
-    //     Text is anchored in lower left corner.
-    LowerLeft = 6,
-    //
-    // Summary:
-    //     Text is anchored in lower side, centered horizontally.
-    LowerCenter = 7,
-    //
-    // Summary:
-    //     Text is anchored in lower right corner.
-    LowerRight = 8
-}
 #endif
 
-namespace Altimit.Unity.UI
+namespace Altimit.UI
 {
     public partial class AUI
     {
@@ -114,7 +48,7 @@ namespace Altimit.Unity.UI
             node.ToggleGroup().RoundImage(AUI.Purple).HList(0, 0).FitWidth().Shadow();
             foreach (var name in Enum.GetNames(typeof(T)))
             {
-                node.Hold(AUI.UI.ToggleButton(name, AUI.Purple, false));
+                node.Hold(new ToggleButton() { Name = name, Material = AUI.Purple, UseShadow = false });
             }
             return node;    
         }
@@ -126,15 +60,17 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return null;
 #endif
+            return node;
         }
         
-        public static Node OnToggle(this Node go, Action<Toggle> onToggle)
+        public static Node OnToggle(this Node node, Action<ToggleButton> onToggle)
         {
 #if UNITY_5_3_OR_NEWER
-            return go.Hold<BetterToggleGroup>(x=>x.onToggle += onToggle);
+            return node.Hold<BetterToggleGroup>(x=>x.onToggle += onToggle);
 #elif GODOT
-            return go;
+            return node;
 #endif
+            return node;
         }
 
         public static Node Panel(this Node go)
@@ -151,6 +87,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return null;
 #endif
+            return node;
         }
 
         public static Node VList(this Node go, TextAnchor alignment)
@@ -174,15 +111,17 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return go;
 #endif
+            return null;
         }
 
-        public static Node GridList(this Node go, int padding = AUI.SmallSpace, int spacing = AUI.SmallSpace)
+        public static Node GridList(this Node node, int padding = AUI.SmallSpace, int spacing = AUI.SmallSpace)
         {
 #if UNITY_5_3_OR_NEWER
             return go.Hold<GridLayoutGroup>(x=>x.spacing = Vector2.one*spacing).SetPadding(padding).Hold<StretchingGrid>();
 #elif GODOT
             return go;
 #endif
+            return node;
         }
 
         public static Node HList(this Node go, TextAnchor alignment)
@@ -206,19 +145,23 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return go;
 #endif
+            return go;
         }
 
         public static Node CanvasGroup(this Node node, float alpha = 1)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<CanvasGroup>(x => { x.alpha = alpha; });
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node Canvas(this Node node)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             node.Hold<Canvas>(x => {
                 x.planeDistance = 1;
@@ -227,8 +170,9 @@ namespace Altimit.Unity.UI
             OnCanvasCreated?.Invoke(node);
             return node;
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node SmallImage(this Node go, Sprite sprite = null, Material material = null, ImageType type = ImageType.Simple)
@@ -247,6 +191,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node Slider(this Node node)
@@ -272,6 +217,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node Bar(this Node node, Material frontMaterial = null, Material backMaterial = null)
@@ -283,6 +229,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node Search(this Node node, Func<string, CancellationToken, Task> onSearchRequest = null)
@@ -307,9 +254,12 @@ namespace Altimit.Unity.UI
 
         public static Node ScrollView(this Node go, params Node[] children)
         {
+            /*
             return go.ScrollView(
                 AUI.UI.VList().Hold(children)
             );
+            */
+            return go;
         }
         
         public static Node ScrollView(this Node node, Node contentNode, int spacing = 0, int padding = 0, bool useBar = true)
@@ -541,6 +491,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node Scale(this Node node)
@@ -550,10 +501,12 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node Dropdown(this Node node, string[] options)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             Node scrollViewGO;
             Node arrowGO;
@@ -590,12 +543,14 @@ namespace Altimit.Unity.UI
             dropdown.gameObject.Hold<MDropdown>(x => x.ArrowGO = arrowGO);
             return node;
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node BackButton(this Node node)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             Node arrowGO;
             BackButton backButton;
@@ -605,8 +560,9 @@ namespace Altimit.Unity.UI
             backButton.ArrowGO = arrowGO;
             return node;
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node Shadow(this Node node)
@@ -639,26 +595,27 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node MaskButton(this Node node, Sprite sprite = null)
         {
             return node.Scale().Button().RoundImage(AUI.SmallSize).Shadow().SoftMask(false).Hold(
-                        AUI.UI.Image(sprite, AUI.Masked).OnHeld(x=>x.Stretch())
+                        new TextureRect() { Sprite = sprite, Material = AUI.Masked }.OnHeld(x=>x.Stretch())
                     );
         }
 
         public static Node Toggle(this Node node)
         {
-            if (node.Has<Toggle>())
+            if (node.Has<ToggleButton>())
                 return node;
-
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<Toggle>(x=> { x.transition = Selectable.Transition.None; x.toggleTransition = UnityEngine.UI.Toggle.ToggleTransition.None; }).
                 OnClick(PlayClick).Call(OnToggleCreated);
 #elif GODOT
+            */
             return node;
-#endif
         }
 
         public static void PlayClick()
@@ -672,11 +629,13 @@ namespace Altimit.Unity.UI
 
         public static Node Button(this Node node)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<Button>(x=>x.transition = Selectable.Transition.None).OnClick(PlayClick).Call(OnButtonCreated);
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node Text(this Node go, Material material, TextAnchor alignment = TextAnchor.UpperLeft)
@@ -704,6 +663,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node Text(this Node node, string text = null, Material material = null, TextAnchor textAnchor = TextAnchor.UpperLeft, bool isClear = false, bool includeChildren = false)
@@ -758,6 +718,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
     }
 }

@@ -14,7 +14,7 @@ using Node = Godot.Node;
 using Component = Godot.Node;
 #endif
 
-namespace Altimit.Unity.UI
+namespace Altimit.UI
 {
     public enum HistoryType
     {
@@ -42,7 +42,7 @@ namespace Altimit.Unity.UI
     }
 
     [AType]
-    public partial class View : Component, IView
+    public partial class View : Node2D, IView
     {
         //Panels by default hide other panels
         public virtual bool IsAutoManaged()
@@ -58,6 +58,7 @@ namespace Altimit.Unity.UI
         {
             get
             {
+                /*
 #if UNITY_5_3_OR_NEWER
                 if (_panelManager == null)
                 {
@@ -77,6 +78,8 @@ namespace Altimit.Unity.UI
 #elif GODOT
                 return null;
 #endif
+                */
+                return null;
             }
             set
             {

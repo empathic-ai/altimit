@@ -6,7 +6,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using Altimit;
 using Altimit.Serialization;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Altimit.Networking
 {

@@ -121,12 +121,14 @@ namespace Altimit.UI
 
         public static Node HoldFirst(this Node node, params Node[] children)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             children.ToList().ForEach(x => { x.SetParent(node, true, true, true); x.transform.SetAsFirstSibling(); });
             return node;
 #elif GODOT
+            */
             return null;
-#endif
+//#endif
         }
 
         //Sets a Node's children
@@ -170,26 +172,29 @@ namespace Altimit.UI
 #elif GODOT
             return null;
 #endif
+            return node;
         }
 
         //Returns an empty Node
         public static Node New(string name = "")
         {
-            Node node = new Node(name == "" ? OS.Random.Next(0, 1000).ToString() : name);
+            Node node = new Node() { Name = (name == "" ? OS.Random.Next(0, 1000).ToString() : name) };
             return node;
         }
 
         // TODO: Call generic version instead, or have generic refer to this
         public static Node AddOrGet(this Node node, Type type, bool includeChildren = false)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             var comp = node.Get(type, includeChildren);
             if (comp == null)
                 return node.gameObject.AddComponent(type);
             return comp;
 #elif GODOT
+            */
             return null;
-#endif
+//#endif
         }
 
         //Adds or gets a component
@@ -205,13 +210,14 @@ namespace Altimit.UI
         }
 
         //Gets a component
-        public static T GetInParent<T>(this Node go) where T : Node
+        public static T GetInParent<T>(this Node node) where T : Node
         {
 #if UNITY_5_3_OR_NEWER
-            return (go == null ? null : go.GetComponentInParent<T>());
+            return (node == null ? null : node.GetComponentInParent<T>());
 #elif GODOT
             return null;
 #endif
+            return null;
         }
 
         //Gets a component
@@ -222,6 +228,7 @@ namespace Altimit.UI
 #elif GODOT
             return null;
 #endif
+            return null;
         }
 
         //Gets a component
@@ -242,6 +249,7 @@ namespace Altimit.UI
 #elif GODOT
             return null;
 #endif
+            return node;
         }
 
         //Gets a component

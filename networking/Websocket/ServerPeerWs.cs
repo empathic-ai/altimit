@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-#if UNITY_64
+#if GODOT
+using Godot;
+#else
 using WebSocketSharp;
 using WebSocketSharp.Server;
-#else
-using Godot;
 #endif
 
 namespace Altimit.Networking

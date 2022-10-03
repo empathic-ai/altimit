@@ -1,17 +1,7 @@
-﻿#if UNITY_5_3_OR_NEWER
-using SoftMasking;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
-using Material = UnityEngine.Material;
-using Font = TMPro.TMP_FontAsset;
-using Node = UnityEngine.GameObject;
-#elif GODOT
-using Godot;
-using Node = Godot.Node;
-#endif
+﻿using Altimit.UI;
 
-namespace Altimit.Unity.UI
+
+namespace Altimit.UI
 {
     public partial class AUI
     {
@@ -22,6 +12,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node FlexibleWidth(this Node node, int width)
@@ -31,6 +22,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node FlexibleHeight(this Node node)
@@ -40,6 +32,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node SetSize(this Node go, float size = SmallSize)
@@ -64,6 +57,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node SetHeight(this Node node, float height)
@@ -75,24 +69,27 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node SetWidth(this Node node, float width)
         {
             if (width == -1)
                 return node;
-
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<RectTransform>(x => { x.sizeDelta = new Vector2(width, x.sizeDelta.y); }).
                 Hold<LayoutElement>(x => { x.preferredWidth = width; x.preferredHeight = -1; }).
                 MinWidth(width);
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node FitSize(this Node node, bool horizontalFit = true, bool verticalFit = true)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<ContentSizeFitter>(x =>
             {
@@ -100,8 +97,9 @@ namespace Altimit.Unity.UI
                 x.verticalFit = verticalFit ? ContentSizeFitter.FitMode.PreferredSize : ContentSizeFitter.FitMode.Unconstrained;
             });
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node MinSize(this Node go, Vector2 size)
@@ -111,24 +109,29 @@ namespace Altimit.Unity.UI
 
         public static Node MinHeight(this Node node, float height)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<LayoutElement>(x => x.minHeight = height);
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node MinWidth(this Node node, float width)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<LayoutElement>(x => x.minWidth = width);
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node StretchVerticalRight(this Node node, float minY = 0, float maxY = 0)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.SetAnchor(new Vector2(1, 0), new Vector2(1, 1)).Hold<RectTransform>(z =>
             {
@@ -136,12 +139,14 @@ namespace Altimit.Unity.UI
                 z.offsetMax = new Vector2(z.offsetMax.x, maxY);
             });
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node StretchVertical(this Node node, float minY = 0, float maxY = 0)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.SetAnchor(new Vector2(.5f, 0), new Vector2(.5f, 1)).Hold<RectTransform>(z =>
             {
@@ -149,12 +154,14 @@ namespace Altimit.Unity.UI
                 z.offsetMax = new Vector2(z.offsetMax.x, maxY);
             });
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node StretchHorizontal(this Node node, float minX = 0, float maxX = 0)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.SetAnchor(new Vector2(0, .5f), new Vector2(1, .5f)).Hold<RectTransform>(z =>
             {
@@ -162,8 +169,9 @@ namespace Altimit.Unity.UI
                 z.offsetMax = new Vector2(maxX, z.offsetMax.y);
             });
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node Stretch(this Node go, float margin = 0)
@@ -173,11 +181,13 @@ namespace Altimit.Unity.UI
 
         public static Node SetChildAlignment(this Node node, TextAnchor childAlignment)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Get<HorizontalOrVerticalLayoutGroup>(x => { x.childAlignment = childAlignment; });
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node SetPadding(this Node go, int padding = SmallSpace)
@@ -187,39 +197,45 @@ namespace Altimit.Unity.UI
 
         public static Node SetPadding(this Node node, Vector4 margin)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<LayoutGroup>(x =>
             {
                 x.padding = new RectOffset((int)margin.x, (int)margin.y, (int)margin.z, (int)margin.w);
             });
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node SetSpacing(this Node node, float spacing)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<HorizontalOrVerticalLayoutGroup>(x =>
             {
                 x.spacing = spacing;
             });
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         // TODO: Add other anchors
         public static Node SetPivot(this Node node, Vector2 pivot)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<RectTransform>(x =>
             {
                 x.pivot = pivot;
             });
 #elif GODOT
+            */
             return node;
-#endif
+//#endif
         }
 
         public static Node SetPositionZ(this Node node, float positionZ)
@@ -232,10 +248,12 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node SetPositionX(this Node node, float positionX)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<RectTransform>(x =>
             {
@@ -244,10 +262,13 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            */
+            return node;
         }
 
         public static Node SetPositionY(this Node node, float positionY)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<Transform>(x =>
             {
@@ -257,6 +278,8 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            */
+            return node;
         }
 
         public static Node SetPosition(this Node node, Vector2 position)
@@ -269,6 +292,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
 
@@ -283,11 +307,13 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         // TODO: Add other anchors
         public static Node SetAnchor(this Node node, TextAnchor anchor, StretchType stretchType = StretchType.None)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<RectTransform>(x =>
             {
@@ -315,6 +341,8 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            */
+            return node;
         }
 
         public static Node SetMargin(this Node node, float margin = SmallSpace)
@@ -335,6 +363,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node SetMargin(this Node node, float margin, StretchType stretchType)
@@ -352,6 +381,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
 
         public static Node IgnoreLayout(this Node node, bool ignoreLayout = true)
@@ -361,6 +391,7 @@ namespace Altimit.Unity.UI
 #elif GODOT
             return node;
 #endif
+            return node;
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 #if UNITY_64
 using Cysharp.Threading.Tasks;
 using Unity.WebRTC;
-#else
+#elif GODOT
 using Godot;
 #endif
 using UnityEngine;
@@ -96,7 +96,7 @@ namespace Altimit.Networking
 
         public bool IsPeerHandling = false;
         public bool IsSelfHandling = false;
-#else
+#elif GODOT
         WebRTCPeerConnection peerConnection;
         WebRTCDataChannel reliableDataChannel;
 #endif
@@ -144,7 +144,7 @@ namespace Altimit.Networking
             var error = transceiver1.SetCodecPreferences(RTCRtpSender.GetCapabilities(TrackKind.Audio).codecs);
             if (error != RTCErrorType.None)
                 OS.LogError(error);
-#else
+#elif GODOT
             peerConnection = new WebRTCPeerConnection();
             peerConnection.DataChannelReceived += ReceiveChannelCallback;
             peerConnection.IceCandidateCreated += (media, index, name) => OnIceCandidate(new WebRTCIceCandidate(name, media, (int?)index));
@@ -283,6 +283,7 @@ namespace Altimit.Networking
 
         private async void OnDataChannelOpen()
         {
+            #if UNITY_64 || GODOT
             if (OS.LogWebRTC)
                 Logger.Log("Opened data channel!");
 
@@ -295,6 +296,7 @@ namespace Altimit.Networking
 
             Connected?.Invoke(this);
             CompletionSource.SetResult(true);
+            #endif
         }
 
 #if UNITY_64
@@ -373,7 +375,7 @@ namespace Altimit.Networking
             if (RemoteConnectionState.Equals(RTCIceConnectionState.Completed))
                 throw new P2PConnectedException();
         }*/
-#else
+#elif GODOT
         private void ReceiveChannelCallback(WebRTCDataChannel channel)
         {
             if (channel.GetLabel() == reliableDataChannelLabel && reliableDataChannel == null)
@@ -387,6 +389,16 @@ namespace Altimit.Networking
             }
         }
 
+        public void Disconnect()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void SendBytes(byte[] bytes, bool isReliable = true)
+        {
+            throw new NotImplementedException();
+        }
+#else
         public void Disconnect()
         {
             throw new NotImplementedException();

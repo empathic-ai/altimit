@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Altimit.UI
 {
-    public class Node
+    public class ToggleButton : Node2D
     {
-        public string Name { get; set; }
+        public Material Material;
+        public bool UseShadow = true;
 
-        public Node()
+        public ToggleButton() : base()
         {
 
         }
