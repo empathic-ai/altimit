@@ -94,7 +94,7 @@ Easily create complex, scalable, platform-agnostic user interfaces.
 ```C#
 // Renders a sign-in screen on a client
 [AType]
-class SignInView : View {
+public class SignInView : View {
 
     [AProperty]
     string email { get; set; } = "";
