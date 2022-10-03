@@ -34,7 +34,7 @@ public class User
 ```C#
 // The interface of a server
 [AType]
-public interface IUserServer
+public interface IServer
 {
 
     [AMethod]
@@ -46,18 +46,18 @@ public interface IUserServer
 }
 
 // On the client:
-public class UserClient {
+public class Client {
 
   public async void SignIn(string email, string password)
   {
-    var myUser = await UserServer.SignIn(email, password);
+    var myUser = await server.SignIn(email, password);
     ...
   }
 
 }
 
 // On the server:
-public class UserServer : IUserServer {
+public class Server : IServer {
 
   public async Task<User> SignIn(string email, string password)
   {
