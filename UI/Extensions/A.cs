@@ -166,12 +166,14 @@ namespace Altimit.UI
         //Sets a Node's children
         public static Node Release(this Node node)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             node.transform.DetachChildren();
             return node;
 #elif GODOT
             return null;
 #endif
+            */
             return node;
         }
 
@@ -212,22 +214,26 @@ namespace Altimit.UI
         //Gets a component
         public static T GetInParent<T>(this Node node) where T : Node
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return (node == null ? null : node.GetComponentInParent<T>());
 #elif GODOT
             return null;
 #endif
+            */
             return null;
         }
 
         //Gets a component
         public static T[] GetInParents<T>(this Node node) where T : Node
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return (node == null ? new T[0] : node.GetComponentsInParent<T>());
 #elif GODOT
             return null;
 #endif
+            */
             return null;
         }
 
@@ -239,6 +245,7 @@ namespace Altimit.UI
 
         public static Node Get(this Node node, Type type, bool includeChildren = false)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             if (node == null)
                 throw new Exception("Tried setting component on a null Node!");
@@ -249,6 +256,7 @@ namespace Altimit.UI
 #elif GODOT
             return null;
 #endif
+            */
             return node;
         }
 

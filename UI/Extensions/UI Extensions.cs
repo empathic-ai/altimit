@@ -1,4 +1,5 @@
 ﻿using System;
+/*
 #if UNITY_5_3_OR_NEWER
 using SoftMasking;
 using TMPro;
@@ -15,6 +16,7 @@ using Godot;
 using Node = Godot.Node;
 using Sprite = Godot.Texture;
 #endif
+*/
 using Altimit.UI;
 
 namespace Altimit.UI
@@ -23,16 +25,13 @@ namespace Altimit.UI
     {
         public static Node Name(this Node go, string name)
         {
-#if UNITY_5_3_OR_NEWER
-            go.name = name;
-#elif GODOT
-            go.Name = name;
-#endif
+            
             return go;
         }
 
         public static Node SetMaterial(this Node node, Material material = null)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             if (node.AddOrGet<Image>().material.name == "Default UI Material")
             {
@@ -43,37 +42,43 @@ namespace Altimit.UI
                 node.AddOrGet<Image>().material = material;
 #elif GODOT
 #endif
-
+            */
             return node;
         }
 
         public static Node OnValueChanged(this Node go, Action<bool> action)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             go.Toggle().Hold<Toggle>(x => x.onValueChanged.AddListener(new UnityAction<bool>(action)));
 #elif GODOT
 
 #endif
+            */
             return go;
         }
 
         public static Node OnValueChanged(this Node go, Action<float> action)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             go.Hold<Slider>(x => x.onValueChanged.AddListener(new UnityAction<float>(action)));
 #elif GODOT
 
 #endif
+            */
             return go;
         }
 
         public static Node OnClick(this Node node, Action action, bool resetListeners = false)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             node.Hold<Element>(x => x.onPointerClick += x=>action());
 #elif GODOT
 
 #endif
+            */
 
             return node;
         }
@@ -213,16 +218,19 @@ namespace Altimit.UI
         {
             if (name == null)
                 return null;
+            /*
 #if UNITY_5_3_OR_NEWER
             return Resources.Load<Sprite>("Sprites/" + name);
 #elif GODOT
             return null;
 #endif
+            */
             return null;
         }
 
         public static Material GetMaterial(string name, bool isNew = false)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             Material material = Resources.Load<Material>("Materials/" + name);
             if (isNew && Application.isPlaying)
@@ -231,16 +239,19 @@ namespace Altimit.UI
 #elif GODOT
             return null;
 #endif
+            */
             return null;
         }
 
         public static AudioStream GetSound(string name)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return Resources.Load<AudioStream>("Sounds/" + name);
 #elif GODOT
             return null;
 #endif
+            */
             return null;
         }
 
@@ -260,11 +271,13 @@ namespace Altimit.UI
 
         public static Node SetAlpha(this Node node, float alpha)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<Image>(x => x.color = x.color.SetAlpha(alpha));
 #elif GODOT
             return null;
 #endif
+            */
             return null;
         }
 

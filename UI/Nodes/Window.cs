@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+/*
 #if UNITY_5_3_OR_NEWER
 using SoftMasking;
 using TMPro;
@@ -18,30 +19,33 @@ using Node = Godot.Node;
 using Component = Godot.Node;
 using Sprite = Godot.Texture;
 #endif
+*/
 //using UnityEngine.InputSystem;
 
 namespace Altimit.UI
 {
-#if UNITY_5_3_OR_NEWER
-    [ExecuteInEditMode]
-#endif
+//#if UNITY_5_3_OR_NEWER
+//    [ExecuteInEditMode]
+//#endif
     public partial class Window : Node
     {
         public bool IsVisible = false;
         public SystemManager SystemManager;
-
+/*
 #if UNITY_5_3_OR_NEWER
         [HideInInspector]
 #endif
-
+*/
         public bool isPreviewed = false;
         protected bool isDestroyed = false;
 
         //public bool IsSubWindow = false;
         protected float defaultScale = .00175f;
+        /*
 #if UNITY_5_3_OR_NEWER
         [SerializeField]
 #endif
+        */
         protected bool isRendered = false;
 
         public void OnEnable()
@@ -50,9 +54,11 @@ namespace Altimit.UI
 
         protected virtual void Awake()
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             gameObject.layer = LayerMask.NameToLayer("UI");
 #endif
+            */
         }
 
         protected virtual void OnDestroy()
@@ -61,6 +67,7 @@ namespace Altimit.UI
 
         protected virtual void Start()
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             if (Application.isPlaying)
             {
@@ -69,7 +76,7 @@ namespace Altimit.UI
             }
 #elif GODOT
 #endif
-
+            */
         }
 
         public virtual string GetName()
@@ -79,6 +86,7 @@ namespace Altimit.UI
 
         public virtual Sprite GetIcon()
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             Sprite sprite = Resources.Load<Sprite>("Sprites/" + GetName());
             //Debug.Log(GetName() + ", " + (sprite == null).ToString());
@@ -86,6 +94,7 @@ namespace Altimit.UI
 #elif GODOT
             return null;
 #endif
+            */
             return null;
         }
 
@@ -110,6 +119,7 @@ namespace Altimit.UI
 
         public virtual void Clear()
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             isRendered = false;
             for (int i = 0; i < transform.childCount; i++)
@@ -126,8 +136,9 @@ namespace Altimit.UI
             }
 #elif GODOT
 #endif
-
+            */
         }
+
         /*
         public void AddSubWindow(Window window)
         {
@@ -182,9 +193,11 @@ namespace Altimit.UI
 
         public virtual void SetVisibility(bool isVisible, bool isImmediate = false)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             gameObject.SetActive(isVisible);
 #endif
+            */
         }
 
         protected virtual void OnTransition()

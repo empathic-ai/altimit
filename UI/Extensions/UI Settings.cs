@@ -1,4 +1,5 @@
-﻿#if UNITY_5_3_OR_NEWER
+﻿/*
+#if UNITY_5_3_OR_NEWER
 using TMPro;
 using UnityEngine;
 using Material = UnityEngine.Material;
@@ -7,6 +8,7 @@ using Texture = UnityEngine.Sprite;
 #elif GODOT
 using Godot;
 #endif
+*/
 using Altimit.UI;
 
 namespace Altimit.UI

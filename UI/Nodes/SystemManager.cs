@@ -9,6 +9,7 @@ namespace Altimit.UI
         public AList<Window> Windows = new AList<Window>();
         //public BoundList<Window> ExposedWindows = new BoundList<Window>();
         public const bool DebugMessages = false;
+
 #if UNITY_5_3_OR_NEWER
         public void Awake()
         {
@@ -17,6 +18,7 @@ namespace Altimit.UI
 
         void Init()
         {
+            /* todo: uncomment after UI changes
             gameObject.name = "[OS]";
             foreach (var window in gameObject.GetComponentsInChildren<Window>())
             {
@@ -25,6 +27,7 @@ namespace Altimit.UI
 
             Windows.OnAdded += ItemAdded;
             Windows.OnRemoved += ItemRemoved;
+            */
         }
 
         public void ItemAdded(Window window)
@@ -100,32 +103,27 @@ namespace Altimit.UI
 
         protected virtual Window AddWindow(Type type, bool isVisible = true)
         {
-            GameObject windowGO = new GameObject();
-            windowGO.AddComponent(type);
-            var window = (Window)windowGO.GetComponent(type);
+            /* todo: uncomment after UI changes
+GameObject windowGO = new GameObject();
+windowGO.AddComponent(type);
+var window = (Window)windowGO.GetComponent(type);
 
-            //if (window.IsCompatible(this))
-            //{
-            AddWindow(window);
-            window.SetVisibility(isVisible);
-            window.UpdatePosition();
-                //window.Focus(true);
-                //window.SetDisplay(isOpen);
-            //} else
-            //{
-              //  Destroy(windowGO);
-              //  window = null;
-            //}
-            //windowGO.transform.localScale = Vector3.one;
-            return window;
+AddWindow(window);
+window.SetVisibility(isVisible);
+window.UpdatePosition();
+
+return window;
+            */
+            return null;
         }
 
         public virtual void AddWindow(Window window)
         {
+                        /* todo: uncomment after UI changes
             window.gameObject.SetParent(gameObject, false);
             window.SystemManager = this;
             Windows.Add(window);
-            //window.OnSystemStarted(this);
+                        */
         }
 
         public T CreateWindow<T>() where T : Window
@@ -141,10 +139,11 @@ namespace Altimit.UI
 
         public void CloseWindow(Window window, bool isImmediate = false)
         {
+                                    /* todo: uncomment after UI changes
             if (DebugMessages)
                 Debug.Log("Closing window named " + window.GetName());
-            //Windows.Remove(window);
             window.Close(isImmediate);
+                                    */
         }
 
         public void CloseWindows(IEnumerable<Window> windows, bool isImmediate = false)
@@ -155,12 +154,12 @@ namespace Altimit.UI
 
         public void CloseAllWindows(bool isImmediate = false)
         {
+                                    /* todo: uncomment after UI changes
             if (DebugMessages)
                 Debug.Log("Closing all windows");
             CloseWindows(GetAllWindows(), isImmediate);
+                                    */
         }
 #endif
-
-
     }
 }

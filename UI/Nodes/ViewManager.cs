@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-
+/*
 #if UNITY_5_3_OR_NEWER
 using SoftMasking;
 using TMPro;
@@ -16,16 +16,12 @@ using Godot;
 using Node = Godot.Node;
 using Component = Godot.Node;
 #endif
-
+*/
 using System.Linq;
 using System;
 
 namespace Altimit.UI
 {
-#if UNITY_5_3_OR_NEWER
-    [ExecuteInEditMode]
-#endif
-
     public partial class ViewManager : Node
     {
         public Window Window;
@@ -70,6 +66,7 @@ namespace Altimit.UI
         // Use this for initialization
         void Awake()
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             if (!Application.isPlaying)
             {
@@ -81,10 +78,12 @@ namespace Altimit.UI
 
             Show(gameObject.AddOrGet<View>());
 #endif
+            */
         }
 
         private void Start()
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             if (!Application.isPlaying) return;
             if (BackButtonGO)
@@ -93,6 +92,7 @@ namespace Altimit.UI
                 BackButtonGO.SetActive(false);
             }
 #endif
+            */
         }
 
         public void OnEnable()
@@ -102,12 +102,97 @@ namespace Altimit.UI
 
         void OnDisable ()
         {
-
+            /*
 #if UNITY_EDITOR
             Selection.selectionChanged -= UpdateSelectedPanel;
 #endif
+            */
         }
 
+        public void Show<T>(HistoryType historyType = HistoryType.ClearHistory) where T : View
+        {
+#if TEMP
+            var panel = gameObject.GetComponentInChildren<T>(true);
+            Show(panel, historyType);
+#endif
+        }
+
+        public T GetView<T>() where T : View
+        {
+#if TEMP
+            return gameObject.GetComponentInChildren<T>(true);
+#endif
+            return null;
+        }
+
+        public void Show<T>(Action<T> onShow, HistoryType historyType = HistoryType.ClearHistory) where T : View
+        {
+            var view = GetView<T>();//(T)GetChildPanels(gameObject).Single(x => x.GetType() == typeof(T));
+            Show(view, historyType);
+            onShow?.Invoke(view);
+        }
+
+        public void Show(View panel, HistoryType historyType = HistoryType.ClearHistory)
+        {
+#if TEMP
+            if (panel == null)
+                return;
+
+            //if (historyType.Equals(HistoryType.AddHistory) && currentPanel != null)
+            //{
+            //    if (PanelHistory.Count == 0 || PanelHistory[PanelHistory.Count-1] != currentPanel)
+            //    PanelHistory.Add(currentPanel);
+            //}
+
+            //Debug.Log(gameObject.name + " is showing panel " + panel.gameObject.name);
+
+            View lastPanel = panel;
+
+
+            //Iterates through parent panels.
+            View firstPanel = panel;
+            View parentPanel = GetParentPanel(firstPanel);
+            while (parentPanel != null)
+            {
+                parentPanel.SetVisibility(true);
+                GetChildPanels(parentPanel.gameObject).ForEach(x => { if (x.IsAutoManaged()) x.SetVisibility(x == firstPanel); });
+                firstPanel = parentPanel;
+                parentPanel = GetParentPanel(parentPanel);
+            }
+            //Debug.Log(lastPanel.gameObject.name + ", " + (contentSizeFitter == null).ToString() + ", " + lastPanel.SizeFit);
+
+            //SizeFitter.enabled = AllowSnapping && lastPanel.SizeFit;
+            CurrentView = panel;
+
+            if (Application.isPlaying)
+            {
+                if (historyType.Equals(HistoryType.ClearHistory))
+                    ClearHistory();
+
+                if (!historyType.Equals(HistoryType.IgnoreHistory))
+                {
+                    if (ViewHistory.Count == 0 || ViewHistory[ViewHistory.Count - 1] != panel)
+                        ViewHistory.Add(panel);
+                }
+
+                panel.Show(historyType);
+            }
+
+            //Iterates through child panels. The first child panel found is set active by default, while all others are deactivated
+            List<View> childPanels = GetChildPanels(lastPanel.gameObject);
+            while (childPanels.Count > 0)
+            {
+                childPanels.ForEach(x => {
+                    if (x.IsAutoManaged())
+                        x.SetVisibility(childPanels.IndexOf(x) == 0);
+                });
+                lastPanel = childPanels[0];
+                childPanels = GetChildPanels(lastPanel.gameObject);
+            }
+            OnShowPanel(panel);
+#endif
+        }
+        /*
 #if UNITY_5_3_OR_NEWER
         // Update is called once per frame
         void UpdateSelectedPanel()
@@ -149,95 +234,6 @@ namespace Altimit.UI
             return GetPanel(go.transform.parent.gameObject);
         }
 
-        /*
-        public void Show<T>(DataPanel<T> panel, T source, HistoryType historyType = HistoryType.ClearHistory) where T : new()
-        {
-            Show(panel, historyType);
-            panel.SetSource(source);
-        }*/
-
-        public void Show<T>(HistoryType historyType = HistoryType.ClearHistory) where T : View
-        {
-            var panel = gameObject.GetComponentInChildren<T>(true);
-            Show(panel, historyType);
-        }
-
-        public T GetView<T>() where T : View
-        {
-            return gameObject.GetComponentInChildren<T>(true);
-        }
-
-        public void Show<T>(Action<T> onShow, HistoryType historyType = HistoryType.ClearHistory) where T : View
-        {
-            var view = GetView<T>();//(T)GetChildPanels(gameObject).Single(x => x.GetType() == typeof(T));
-            Show(view, historyType);
-            onShow?.Invoke(view);
-        }
-
-        public void Show(View panel, HistoryType historyType = HistoryType.ClearHistory)
-        {
-            if (panel == null)
-                return;
-
-            //if (historyType.Equals(HistoryType.AddHistory) && currentPanel != null)
-            //{
-            //    if (PanelHistory.Count == 0 || PanelHistory[PanelHistory.Count-1] != currentPanel)
-            //    PanelHistory.Add(currentPanel);
-            //}
-
-            //Debug.Log(gameObject.name + " is showing panel " + panel.gameObject.name);
-
-            View lastPanel = panel;
-
-
-            //Iterates through parent panels.
-            View firstPanel = panel;
-            View parentPanel = GetParentPanel(firstPanel);
-            while (parentPanel != null)
-            {
-                parentPanel.SetVisibility(true);
-                GetChildPanels(parentPanel.gameObject).ForEach(x => { if (x.IsAutoManaged()) x.SetVisibility(x == firstPanel); });
-                firstPanel = parentPanel;
-                parentPanel = GetParentPanel(parentPanel);
-            }
-            //Debug.Log(lastPanel.gameObject.name + ", " + (contentSizeFitter == null).ToString() + ", " + lastPanel.SizeFit);
-
-            //SizeFitter.enabled = AllowSnapping && lastPanel.SizeFit;
-            /*
-            if (!SizeFitter.enabled && GetComponent<Canvas>().renderMode == RenderMode.WorldSpace)
-            {
-                GetComponent<RectTransform>().sizeDelta = new Vector2(1500, 1000);
-            }*/
-
-            CurrentView = panel;
-
-            if (Application.isPlaying)
-            {
-                if (historyType.Equals(HistoryType.ClearHistory))
-                    ClearHistory();
-
-                if (!historyType.Equals(HistoryType.IgnoreHistory))
-                {
-                    if (ViewHistory.Count == 0 || ViewHistory[ViewHistory.Count-1] != panel)
-                        ViewHistory.Add(panel);
-                }
-
-                panel.Show(historyType);
-            }
-
-            //Iterates through child panels. The first child panel found is set active by default, while all others are deactivated
-            List<View> childPanels = GetChildPanels(lastPanel.gameObject);
-            while (childPanels.Count > 0)
-            {
-                childPanels.ForEach(x => {
-                    if (x.IsAutoManaged())
-                        x.SetVisibility(childPanels.IndexOf(x) == 0);
-                });
-                lastPanel = childPanels[0];
-                childPanels = GetChildPanels(lastPanel.gameObject);
-            }
-            OnShowPanel(panel);
-        }
 
         List<View> GetChildPanels (GameObject go)
         {
@@ -261,13 +257,6 @@ namespace Altimit.UI
 
         public void OnShowPanel (View viewHistory)
         {
-            /*
-            Debug.Break();
-            foreach (var scrollRect in panel.GetComponentsInParent<ScrollRect>())
-            {
-                LayoutRebuilder.ForceRebuildLayoutImmediate(scrollRect.gameObject.rectTransform());
-            }
-            */
             //LayoutRebuilder.ForceRebuildLayoutImmediate(gameObject.rectTransform());
             if (BackButtonGO)
                 BackButtonGO.SetActive(ViewHistory.Count > 1);
@@ -299,6 +288,6 @@ namespace Altimit.UI
             Show(ViewHistory[ViewHistory.Count - 1], HistoryType.IgnoreHistory);//.OnStart(()=>PanelHistory.RemoveAt(PanelHistory.Count-1));
         }
 #endif
-
+        */
     }
 }

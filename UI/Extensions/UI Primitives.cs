@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-
+/*
 #if UNITY_5_3_OR_NEWER
 using SoftMasking;
 using TMPro;
@@ -25,6 +25,7 @@ using Font = Godot.Font;
 using Toggle = Godot.Button;
 using Sprite = Godot.Texture;
 #endif
+*/
 
 namespace Altimit.UI
 {
@@ -55,21 +56,25 @@ namespace Altimit.UI
 
         public static Node ToggleGroup(this Node node)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<BetterToggleGroup>();
 #elif GODOT
             return null;
 #endif
+            */
             return node;
         }
         
         public static Node OnToggle(this Node node, Action<ToggleButton> onToggle)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<BetterToggleGroup>(x=>x.onToggle += onToggle);
 #elif GODOT
             return node;
 #endif
+            */
             return node;
         }
 
@@ -81,12 +86,14 @@ namespace Altimit.UI
 
         public static Node Panel(this Node node, Action<Node> onRender, params Node[] childPanels)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.
                 Hold<View>(x => { x.Init(onRender, childPanels); });
 #elif GODOT
             return null;
 #endif
+            */
             return node;
         }
 
@@ -97,6 +104,7 @@ namespace Altimit.UI
 
         public static Node VList(this Node go, int padding = SmallSpace, int spacing = SmallSpace, TextAnchor alignment = TextAnchor.UpperLeft)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return go.Hold<VerticalLayoutGroup>(x =>
             {
@@ -111,16 +119,19 @@ namespace Altimit.UI
 #elif GODOT
             return go;
 #endif
+            */
             return null;
         }
 
         public static Node GridList(this Node node, int padding = AUI.SmallSpace, int spacing = AUI.SmallSpace)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return go.Hold<GridLayoutGroup>(x=>x.spacing = Vector2.one*spacing).SetPadding(padding).Hold<StretchingGrid>();
 #elif GODOT
             return go;
 #endif
+            */
             return node;
         }
 
@@ -131,6 +142,7 @@ namespace Altimit.UI
 
         public static Node HList(this Node go, int padding = SmallSpace, int spacing = SmallSpace, TextAnchor alignment = TextAnchor.MiddleCenter)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return go.Hold<HorizontalLayoutGroup>(x =>
             {
@@ -145,6 +157,7 @@ namespace Altimit.UI
 #elif GODOT
             return go;
 #endif
+            */
             return go;
         }
 
@@ -182,6 +195,7 @@ namespace Altimit.UI
 
         public static Node Image(this Node node, Sprite sprite = null, Material material = null, ImageType type = ImageType.Simple)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<Image>(x =>
             {
@@ -191,11 +205,13 @@ namespace Altimit.UI
 #elif GODOT
             return node;
 #endif
+            */
             return node;
         }
 
         public static Node Slider(this Node node)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             RectTransform fillRect, handleRect;
             return node.Hold(
@@ -217,11 +233,13 @@ namespace Altimit.UI
 #elif GODOT
             return node;
 #endif
+            */
             return node;
         }
 
         public static Node Bar(this Node node, Material frontMaterial = null, Material backMaterial = null)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.RoundImage(AUI.SmallSize, backMaterial).SetHeight(AUI.MiniSize).Hold(
                     AUI.UI.RoundImage(AUI.SmallSize, frontMaterial).Stretch().Hold<RectTransform>(x=>x.pivot = new Vector2(0,.5f))
@@ -229,6 +247,7 @@ namespace Altimit.UI
 #elif GODOT
             return node;
 #endif
+            */
             return node;
         }
 
@@ -264,6 +283,7 @@ namespace Altimit.UI
         
         public static Node ScrollView(this Node node, Node contentNode, int spacing = 0, int padding = 0, bool useBar = true)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             ScrollRect scrollRect;
             Scrollbar scrollbar;
@@ -307,12 +327,14 @@ namespace Altimit.UI
             node.Hold<ScrollRectHelper>();
 #elif GODOT
 #endif
+            */
             return node;
         }
 
         public static float TextWidthApproximation(string text, Font fontAsset, int fontSize, FontStyles style)
         {
             float width = 0;
+            /*
 #if UNITY_5_3_OR_NEWER
             // Compute scale of the target point size relative to the sampling point size of the font asset.
             float pointSizeScale = fontSize / (fontAsset.faceInfo.pointSize * fontAsset.faceInfo.scale);
@@ -332,6 +354,7 @@ namespace Altimit.UI
             }
 #elif GODOT
 #endif
+            */
             return width;
         }
 
@@ -486,21 +509,25 @@ namespace Altimit.UI
 
         public static Node ScaleButton(this Node node, string text = null, Material material = null, bool useChildSize = true)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Button(text, material, null, null, true, useChildSize).Hold<ScaleButton>();
 #elif GODOT
             return node;
 #endif
+            */
             return node;
         }
 
         public static Node Scale(this Node node)
         {
+            /*
 #if UNITY_5_3_OR_NEWER
             return node.Hold<ScaleButton>();
 #elif GODOT
             return node;
 #endif
+            */
             return node;
         }
 
@@ -567,7 +594,8 @@ namespace Altimit.UI
 
         public static Node Shadow(this Node node)
         {
-#if UNITY_5_3_OR_NEWER
+
+#if UNITY_LEGACY
             /*
             if (!go.GetComponent<UIShadow>())
             {
@@ -620,7 +648,7 @@ namespace Altimit.UI
 
         public static void PlayClick()
         {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_LEGACY
             var audioSource = DeAudioManager.Play(GetSound("Click"), .25f, Random.Range(.9f, 1.2f));
             audioSource.audioSource.bypassEffects = true;
 #elif GODOT
@@ -654,7 +682,7 @@ namespace Altimit.UI
             if (material == null)
                 material = Default;
 
-#if UNITY_5_3_OR_NEWER
+#if UNITY_LEGACY
             return node.Hold<TextMeshProUGUI>(includeChildren, x =>
             {
                 x.text = text;
@@ -671,7 +699,7 @@ namespace Altimit.UI
             if (material == null)
                 material = Default;
 
-#if UNITY_5_3_OR_NEWER
+#if UNITY_LEGACY
             TextAlignmentOptions alignment = TextAlignmentOptions.TopLeft;
             switch(textAnchor)
             {

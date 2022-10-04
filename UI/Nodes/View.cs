@@ -1,4 +1,5 @@
 ﻿using System;
+/*
 #if UNITY_5_3_OR_NEWER
 using SoftMasking;
 using TMPro;
@@ -13,6 +14,7 @@ using Godot;
 using Node = Godot.Node;
 using Component = Godot.Node;
 #endif
+*/
 
 namespace Altimit.UI
 {
@@ -99,6 +101,50 @@ namespace Altimit.UI
         }
 
         bool hasBeenEnabled = false;
+
+        protected virtual void Render()
+        {
+            //renderGO = gameObject;
+        }
+
+        public virtual void SetVisibility(bool isVisible)
+        {
+            /*
+            if (IsVisible == isVisible)
+                return;
+
+            IsVisible = isVisible;
+            gameObject.SetActive(IsVisible);
+            if (IsVisible)
+            {
+                if (!isRendered)
+                {
+                    InternalRender();
+                    Render();
+                    PostRender();
+                    isRendered = true;
+                }
+                OnShow();
+            }
+            */
+        }
+
+        public virtual void InternalRender()
+        {
+
+        }
+
+        public virtual void OnShow()
+        {
+
+        }
+
+        public virtual void PostRender()
+        {
+
+        }
+
+        /*
 #if UNITY_5_3_OR_NEWER
         public void OnEnable()
         {
@@ -136,47 +182,7 @@ namespace Altimit.UI
 
         protected GameObject renderGO;
 
-        protected virtual void Render()
-        {
-            renderGO = gameObject;
-        }
-
-        public virtual void InternalRender()
-        {
-
-        }
-
         public void OnDisable()
-        {
-
-        }
-
-        public virtual void SetVisibility(bool isVisible)
-        {
-            if (IsVisible == isVisible)
-                return;
-
-            IsVisible = isVisible;
-            gameObject.SetActive(IsVisible);
-            if (IsVisible)
-            {
-                if (!isRendered)
-                {
-                    InternalRender();
-                    Render();
-                    PostRender();
-                    isRendered = true;
-                }
-                OnShow();
-            }
-        }
-
-        public virtual void PostRender()
-        {
-
-        }
-
-        public virtual void OnShow()
         {
 
         }
@@ -209,5 +215,6 @@ namespace Altimit.UI
         }
 #elif GODOT
 #endif
+        */
     }
 }
