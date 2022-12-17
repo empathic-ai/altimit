@@ -156,6 +156,7 @@ Blender | Pending |
 Language | Support |
 --- | --- | 
 C# | Supported ✔️ |
+Python | Supported ✔️ |
 Swift | Planned ➡️ |
 C++ | Pending |
 Javascript | Pending |
