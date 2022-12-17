@@ -15,6 +15,6 @@ namespace Altimit
     public interface IModule : IDisposable
     {
         //public TaskCompletionSource<bool> CompletionSource { get; }
-        void Init();
+        Task OnAdded();
     }
 }

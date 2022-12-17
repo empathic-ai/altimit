@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cpuabs1dqpuqn"
-path="res://.godot/imported/OpenSansRegular.ttf-af0ae6e1ef35c627293c84a05eebcc77.fontdata"
+path="res://.godot/imported/OpenSansRegular.ttf-a5c8e50d553adea20d666dc342070581.fontdata"
 
 [deps]
 
-source_file="res://Scripts/altimit.networking/Scripts/Resources/Fonts/OpenSans/OpenSansRegular.ttf"
-dest_files=["res://.godot/imported/OpenSansRegular.ttf-af0ae6e1ef35c627293c84a05eebcc77.fontdata"]
+source_file="res://Scripts/altimit/Scripts/Core/Fonts/OpenSans/OpenSansRegular.ttf"
+dest_files=["res://.godot/imported/OpenSansRegular.ttf-a5c8e50d553adea20d666dc342070581.fontdata"]
 
 [params]
 
@@ -18,6 +18,7 @@ generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48
+allow_system_fallback=true
 force_autohinter=false
 hinting=1
 subpixel_positioning=1

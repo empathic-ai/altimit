@@ -160,24 +160,12 @@ namespace Altimit.UI
         }
 
 #elif GODOT
-        // TODO: Fill out
-        [AProperty]
-        public bool IsVisible
-        {
-            get
-            {
-                return true;
-            }
-            set
-            {
-                
-            }
-        }
+
 #endif
 
-        public virtual void SetVisibility(bool isVisible)
+        public Node3D()
         {
-            IsVisible = isVisible;
+            
         }
     }
 }

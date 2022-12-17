@@ -19,7 +19,7 @@ namespace Altimit.Networking
         //public IP2PServerSessionModule ServerSession => peerSession.GetModule<IP2PServerSessionModule>();
         public TaskCompletionSource<IP2PServerSM> ConnectedSource;
 
-        public override async void Init()
+        public override async Task OnAdded()
         {
         }
 

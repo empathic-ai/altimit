@@ -34,7 +34,7 @@ namespace Altimit.Networking
         {
         }
 
-        public override async void Init()
+        public override async Task OnAdded()
         {
             InstanceDB.onPropertyChanged += OnPropertyChanged;
             //InstanceDB.onInstanceAdded += OnInstanceAdded;

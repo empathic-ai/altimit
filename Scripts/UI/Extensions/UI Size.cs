@@ -55,6 +55,7 @@ namespace Altimit.UI
             return node;
         }
 
+
         public static T SetHeight<T>(this T node, float height) where T : Control
         {
             node.Height = height;
@@ -66,7 +67,7 @@ namespace Altimit.UI
 #endif
         }
 
-        public static T FitSize<T>(this T node, bool fitWidth = true, bool fitHeight = true) where T : List
+        public static T FitSize<T>(this T node, bool fitWidth = true, bool fitHeight = true) where T : Container
         {
             node.FitWidth = fitWidth;
             node.FitHeight = fitHeight;

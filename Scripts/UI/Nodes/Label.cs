@@ -87,6 +87,11 @@ namespace Altimit.UI
         }
 
         public Anchor Anchor { get; internal set; }
+
+        protected override Godot.Label GenerateGDNode()
+        {
+            return new Godot.Label();
+        }
     }
 }
 

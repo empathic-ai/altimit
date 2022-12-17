@@ -46,5 +46,12 @@ namespace Altimit.UI
         public ImageButton() : base()
         {
         }
+
+#if GODOT
+        protected override Godot.Node GenerateGDNode()
+        {
+            return new Godot.TextureButton();
+        }
+#endif
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-#if GODOT
+#if LEGACY_GODOT
 using Godot;
 #else
 using WebSocketSharp;
@@ -13,7 +13,7 @@ using WebSocketSharp.Server;
 
 namespace Altimit.Networking
 {
-#if GODOT
+#if LEGACY_GODOT
     public class ServerPeerWs : ISocketPeer
     {
         public ILogger Logger { get; set; }
@@ -25,6 +25,7 @@ namespace Altimit.Networking
 
         public ServerPeerWs(WebSocketServer ws, int peerID)
         {
+            Godot.
             this.ws = ws;
             this.peerID = peerID;
             // TODO: Add back in

@@ -59,22 +59,28 @@ namespace Altimit
 
         public async void Update()
         {
-            if (addUpdateables.Count > 0)
+            try
             {
-                updateables.AddRange(addUpdateables);
-                addUpdateables.Clear();
-            }
-            if (removeUpdateables.Count > 0)
-            {
-                updateables = updateables.Except(removeUpdateables).ToList();
-                removeUpdateables.Clear();
-            }
-            foreach (var updateable in updateables)
-                updateable.Update();
+                if (addUpdateables.Count > 0)
+                {
+                    updateables.AddRange(addUpdateables);
+                    addUpdateables.Clear();
+                }
+                if (removeUpdateables.Count > 0)
+                {
+                    updateables = updateables.Except(removeUpdateables).ToList();
+                    removeUpdateables.Clear();
+                }
+                foreach (var updateable in updateables)
+                    updateable.Update();
 
-            while (queue.Count > 0)
+                while (queue.Count > 0)
+                {
+                    queue.Dequeue()?.Invoke();
+                }
+            } catch (Exception e)
             {
-                queue.Dequeue()?.Invoke();
+                OS.LogError(e);
             }
         }
 

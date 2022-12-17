@@ -4,7 +4,7 @@ using System.Net;
 using System.Threading.Tasks;
 using UnityEngine;
 using System.Security.Policy;
-#if GODOT
+#if LEGACY_GODOT
 using Godot;
 #else
 using WebSocketSharp;
@@ -18,7 +18,7 @@ namespace Altimit.Networking
 
         public Action<ISocketPeer> PeerConnected { get; set; }
         public Action<ISocketPeer> PeerDisconnected { get; set; }
-#if GODOT
+#if LEGACY_GODOT
         WebSocketClient ws;
         string url;
 #else
@@ -32,7 +32,7 @@ namespace Altimit.Networking
             System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12;
 
             var url = string.Format("wss://{0}:{1}/w", ip, port);
-#if GODOT
+#if LEGACY_GODOT
             ws = new WebSocketClient();
             this.url = url;
 #else
@@ -48,7 +48,7 @@ namespace Altimit.Networking
         public async Task<ISocketPeer> ConnectAsync()
         {
             //TODO: make async again if doesn't fix connection problems
-#if GODOT
+#if LEGACY_GODOT
             ws.ConnectToUrl(url);
 #else
             while (!ws.IsAlive)

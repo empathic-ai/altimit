@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Altimit.UI
 {
     [AType(true)]
-    public abstract class List : Control
+    public abstract class Container : Control
     {
         [AProperty]
         public abstract Anchor Anchor { get; set; }
@@ -42,7 +42,7 @@ namespace Altimit.UI
         [AProperty]
         public abstract float Spacing { get; set; }
 
-        public List() : base()
+        public Container() : base()
         {
 
         }

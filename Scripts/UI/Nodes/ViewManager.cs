@@ -27,7 +27,7 @@ namespace Altimit.UI
     {
         public Canvas Window;
         public List<View> ViewHistory = new List<View>();
-        public Node3D BackButtonGO;
+        public Control BackButtonGO;
         //public UnityEngine.UI.Button BackButton;
         /*
         public bool AllowSnapping

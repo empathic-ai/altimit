@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-#if GODOT
+#if LEGACY_GODOT
 using Godot;
 #else
 using WebSocketSharp;
@@ -18,7 +18,7 @@ namespace Altimit.Networking
         public Action<ISocketPeer> Connected { get; set; }
         public Action<ISocketPeer> Disconnected { get; set; }
         public Action<byte[]> OnBytesReceived { get; set; }
-#if GODOT
+#if LEGACY_GODOT
         WebSocketClient ws;
 
         public ClientPeerWs(WebSocketClient ws)

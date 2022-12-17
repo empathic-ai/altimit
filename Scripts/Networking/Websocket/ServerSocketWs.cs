@@ -4,7 +4,7 @@ using System.IO;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
-#if GODOT
+#if LEGACY_GODOT
 using Godot;
 #else
 using WebSocketSharp;
@@ -35,7 +35,7 @@ namespace Altimit.Networking
         public async void Listen(int port = 0)
         {
             Stop();
-#if GODOT
+#if LEGACY_GODOT
             wsServer = new WebSocketServer();
             var cert = new Godot.X509Certificate();
             cert.Load(System.IO.Path.Combine(System.Environment.CurrentDirectory, "certificate.crt"));
@@ -95,7 +95,7 @@ namespace Altimit.Networking
 #endif
         }
 
-#if GODOT
+#if LEGACY_GODOT
         private void OnPeerConnected(long id)
         {
             Updater.Instance.OnNextUpdate(() =>

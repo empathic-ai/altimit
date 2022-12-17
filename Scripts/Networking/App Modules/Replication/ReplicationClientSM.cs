@@ -17,7 +17,7 @@ namespace Altimit.Networking
         {
         }
 
-        public override async void Init()
+        public override async Task OnAdded()
         {
             App.Get<ReplicationAM>().InstanceDB.onInstanceAdded += OnInstanceAdded;
         }

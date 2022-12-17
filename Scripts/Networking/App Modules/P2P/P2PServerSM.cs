@@ -12,7 +12,7 @@ namespace Altimit.Networking
         public Guid PeerAppID;
         P2PServerAM P2PServerApp => App.Get<P2PServerAM>();
 
-        public override async void Init()
+        public override async Task OnAdded()
         {
             /*
             P2PClientSession = peerSession.GenerateModule<IP2PClientSessionModule>();

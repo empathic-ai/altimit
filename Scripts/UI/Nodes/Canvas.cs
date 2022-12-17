@@ -56,10 +56,7 @@ namespace Altimit.UI
             }
         }
 
-        public void ToggleVisibility()
-        {
-            SetVisibility(!IsVisible);
-        }
+
         // Positions a window in front of the player
         public virtual Canvas UpdatePosition(bool isImmediate = true)
         {

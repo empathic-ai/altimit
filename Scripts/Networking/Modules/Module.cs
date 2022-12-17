@@ -22,7 +22,7 @@ namespace Altimit
             return module;
         }
 
-        public virtual void Init()
+        public virtual async Task OnAdded()
         {
         }
 

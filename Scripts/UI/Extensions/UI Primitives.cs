@@ -38,7 +38,7 @@ namespace Altimit.UI
         public static Action<Node> OnInputCreated = (x) => { };
         public static Action<Node> OnDropdownCreated = (x) => { };
 
-        public static Node ViewManager(this Node node, Node3D back = null)
+        public static Node ViewManager(this Node node, Control back = null)
         {
             return node.
                 Hold<ViewManager>(x => { x.BackButtonGO = back; });

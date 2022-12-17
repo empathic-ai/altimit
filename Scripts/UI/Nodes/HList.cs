@@ -12,7 +12,7 @@ using Altimit.UI.Unity;
 namespace Altimit.UI
 {
     [AType(true)]
-    public class HList : List
+    public class HList : Container
     {
 #if UNITY
         [AProperty]
@@ -122,12 +122,17 @@ namespace Altimit.UI
             horizontalLayoutGroup.childForceExpandWidth = false;
         }
 #endif
-        public override Anchor Anchor { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override bool ExpandChildWidth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override bool ExpandChildHeight { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override bool FitWidth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override bool FitHeight { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override float Padding { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public override float Spacing { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override Anchor Anchor { get; set; }
+        public override bool ExpandChildWidth { get; set; }
+        public override bool ExpandChildHeight { get; set; }
+        public override bool FitWidth { get; set; }
+        public override bool FitHeight { get; set; }
+        public override float Padding { get; set; }
+        public override float Spacing { get; set; }
+
+        protected override Godot.Node GenerateGDNode()
+        {
+            return new Godot.HBoxContainer();
+        }
     }
 }

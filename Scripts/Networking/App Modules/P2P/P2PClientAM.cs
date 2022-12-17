@@ -66,7 +66,7 @@ namespace Altimit.Networking
             //    masterServer.SetAppID(App.InstanceDB.GetInstanceID(instance));
         }
 
-        public override async void Init()
+        public override async Task OnAdded()
         {
             replicationAM.OnInitialized += OnReplicationInitialized;
         }

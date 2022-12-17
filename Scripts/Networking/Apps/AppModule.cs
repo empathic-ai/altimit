@@ -19,9 +19,9 @@ namespace Altimit
     {
         P2PClientAM P2PAppModule => App.Get<P2PClientAM>();
 
-        public override async void Init()
+        public override async Task OnAdded()
         {
-            base.Init();
+            await base.OnAdded();
         }
 
         public override void Dispose()
@@ -40,9 +40,9 @@ namespace Altimit
         {
         }
 
-        public override async void Init()
+        public override async Task OnAdded()
         {
-            base.Init();
+            await base.OnAdded();
         }
 
         public override void Dispose()

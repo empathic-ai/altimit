@@ -135,20 +135,6 @@ namespace Altimit.UI
                 node.AddChild(child);
             }
             return node;
-
-            /*
-#if UNITY_5_3_OR_NEWER
-            bool resetChildren = (node.GetComponent<RectTransform>() != null);
-            children.ToList().ForEach(x => { x.transform.SetParent(node, resetChildren, resetChildren, resetChildren); });
-            return node;
-#elif GODOT
-            foreach (var child in children)
-            {
-                node.AddChild(child);
-            }
-            return node;
-#endif
-            */
         }
 
         //Sets a Node's children

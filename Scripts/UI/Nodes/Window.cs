@@ -8,13 +8,38 @@ using DG.Tweening;
 using Altimit;
 using Altimit.UI;
 using Altimit.Networking;
+using System.Runtime.CompilerServices;
 
 namespace Altimit.UI {
-    public class Window : Canvas
+    public class Window : Node
     {
+        public Vector2 Position {
+            get
+            {
+                return (Vector2)GDWindow.Position;
+            }
+            set {
+                GDWindow.Position = value;
+            }
+        }
+
+        public Vector2 Size
+        {
+            get
+            {
+                return (Vector2)GDWindow.Size;
+            }
+            set
+            {
+                GDWindow.Size = value;
+            }
+        }
+
         public App App => FindNodeInParent<WindowManager>().App;
 
         Image highlightImage;
+
+        public bool IsVisible { get; set; }
 
 #if TEMP
         public Canvas Canvas
@@ -42,12 +67,20 @@ namespace Altimit.UI {
         protected Node3D renderGO;
         //[SerializeField]
         protected Node3D canvasGO;
+        /*
         protected override void Render() {
 
         }
+        */
+        public void ToggleVisibility()
+        {
+            SetVisibility(!IsVisible);
+        }
+
         public void Close(bool isImmediate = false)
         {
-            SetVisibility(false, isImmediate);
+            
+            //SetVisibility(false, isImmediate);
         }
 
         protected void Render(RenderMode renderMode)
@@ -95,12 +128,12 @@ namespace Altimit.UI {
             Highlight(false);
 #endif
         }
-
+        /*
         public virtual Sprite GetIcon()
         {
             return AUI.GetSprite(GetName());
         }
-
+        */
         // Curves the window's canvas according to an angle
         public void Curve(int angle)
         {
@@ -122,7 +155,7 @@ namespace Altimit.UI {
                 Quaternion.LookRotation(transform.position - userClientAM.GetModule<UserClientAM>().Controller.Head.transform.position);
 #endif
         }
-        
+
         public void Highlight(bool value)
         {
             var padding = value ? AUI.SmallSpace : 0;
@@ -131,11 +164,11 @@ namespace Altimit.UI {
             highlightImage.enabled = value;
 #endif
         }
-
-        public override void SetVisibility(bool isVisible, bool isImmediate = false)
+        
+        public void SetVisibility(bool isVisible, bool isImmediate = false)
         {
             //replace with temp code at some point
-            base.SetVisibility(isVisible, isImmediate);
+            //base.SetVisibility(isVisible, isImmediate);
 #if TEMP
             if (isVisible)
                 TryRender();
@@ -180,6 +213,14 @@ namespace Altimit.UI {
             }
             sequence.Play();
 #endif
+        }
+        
+
+        protected Godot.Window GDWindow => GDNode as Godot.Window;
+
+        protected override Godot.Node GenerateGDNode()
+        {
+            return new Godot.Window();
         }
     }
 }

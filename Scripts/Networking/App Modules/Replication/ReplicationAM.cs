@@ -32,7 +32,7 @@ namespace Altimit.Networking
             AppID = appID;
         }
 
-        public override async void Init()
+        public override async Task OnAdded()
         {
             LocalDB = new LocalDatabase();
             // Set second parameter to false to not reset at startup

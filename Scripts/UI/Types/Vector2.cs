@@ -66,6 +66,25 @@ namespace Altimit.UI
         {
             return new UnityEngine.Vector2(v.x, v.y);
         }
+#elif GODOT
+        public static explicit operator Vector2(Godot.Vector2 v)
+        {
+            return new Vector2(v.x, v.y);
+        }
+
+        public static implicit operator Godot.Vector2(Vector2 v)
+        {
+            return new Godot.Vector2(v.x, v.y);
+        }
+        public static explicit operator Vector2(Godot.Vector2i v)
+        {
+            return new Vector2(v.x, v.y);
+        }
+
+        public static implicit operator Godot.Vector2i(Vector2 v)
+        {
+            return new Godot.Vector2i((int)v.x, (int)v.y);
+        }
 #endif
 
         public static Vector2 Scale (Vector2 a, Vector2 b)

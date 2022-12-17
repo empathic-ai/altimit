@@ -128,21 +128,21 @@ namespace Altimit.UI
         }*/
 
         // Used for one way binding with specified action: data->model
-        public static Node3D BindProperty<T, P>(this Node3D go, T target, Expression<Func<T, P>> dataPropExp, Action<Node, P, P> dataAction)
+        public static Control BindProperty<T, P>(this Control go, T target, Expression<Func<T, P>> dataPropExp, Action<Node, P, P> dataAction)
         {
             target.BindProperty(dataPropExp, (x, y, z) => { dataAction(go, (P)target.GetProperty(y), (P)z); });
             dataAction(go, (P)target.GetProperty(dataPropExp), default(P));
             return go;
         }
 
-        public static Node3D BindInactive<T>(this Node3D go, T target, Expression<Func<T, bool>> propExp, bool isActive = true)
+        public static Control BindInactive<T>(this Control go, T target, Expression<Func<T, bool>> propExp, bool isActive = true)
         {
             go.SetVisibility(target.GetProperty(propExp) ^ isActive);
             target.BindProperty(propExp, (x, y, z) => go.SetVisibility((bool)target.GetProperty(y) ^ isActive));
             return go;
         }
 
-        public static Node3D BindActive<T>(this Node3D go, T target, Expression<Func<T, string>> propExp)
+        public static Control BindActive<T>(this Control go, T target, Expression<Func<T, string>> propExp)
         {
             go.SetVisibility(!string.IsNullOrEmpty(target.GetProperty(propExp)));
             target.BindProperty(propExp, (x, y, z) => go.SetVisibility(!string.IsNullOrEmpty((string)target.GetProperty(y))));

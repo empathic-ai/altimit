@@ -30,7 +30,7 @@ namespace Altimit
         {
             Modules.Add(module);
             module.SetContainer(container);
-            module.Init();
+            module.OnAdded();
             OnModuleAdded?.Invoke(module);
             return module;
         }

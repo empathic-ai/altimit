@@ -36,7 +36,7 @@ namespace Altimit.Networking
             this.port = port;
         }
 
-        public override async void Init()
+        public override async Task OnAdded()
         {
             serverSocket = new ServerSocketWs();
             serverSocket.PeerConnected += OnPeerConnected;

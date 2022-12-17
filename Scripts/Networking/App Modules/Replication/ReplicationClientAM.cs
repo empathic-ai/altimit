@@ -60,7 +60,7 @@ namespace Altimit.Networking
             return await replicationClient.Peer.ResolveAppID(instanceID);
         }
 
-        public override async void Init()
+        public override async Task OnAdded()
         {
             //P2PClientApp = App.AddOrGetModule<P2PClientAppModule>();
             replicationAM = App.Get<ReplicationAM>();

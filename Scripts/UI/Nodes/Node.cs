@@ -6,6 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Altimit;
+using Google.Protobuf.WellKnownTypes;
 #if UNITY_2017_1_OR_NEWER
 using UnityEngine;
 using Altimit.UI.Unity;
@@ -16,6 +17,9 @@ namespace Altimit.UI
     [AType(true)]
     public class Node : IUpdateable, IEnumerable<Node>
     {
+
+        static Dictionary<Godot.Node, Node> nodesByGDNodes = new Dictionary<Godot.Node, Node>();
+
         [AProperty]
         public Node Parent {
             get {
@@ -56,7 +60,6 @@ namespace Altimit.UI
 
         private Node parent
         {
-            /*
 #if UNITY_2017_1_OR_NEWER
             get
             {
@@ -76,37 +79,66 @@ namespace Altimit.UI
                     GameObject.transform.SetParent(value.GameObject.transform, true);
                 }
             }
+#elif GODOT
+            get
+            {
+                if (GDNode.GetParent() == null)
+                    return null;
+
+                Node node;
+                if (nodesByGDNodes.TryGetValue(GDNode.GetParent(), out node)) {
+                    return node;
+                }
+                return null;
+            }
+            set
+            {
+                if (GDNode.GetParent() != null)
+                    GDNode.GetParent().RemoveChild(GDNode);
+
+                if (value != null)
+                {
+                    value.GDNode.AddChild(GDNode);
+                }
+            }
 #else
-            */
             get; set;
-//#endif
+#endif
         }
 
         [AProperty]
         public string Name {
-            /*
-#if UNITY_2017_1_OR_NEWER
-            get
+            get {
+                return GDNode.Name;
+            }
+            set
             {
-                return GameObject.name;
+                GDNode.Name = value;
             }
-            set {
-                GameObject.name = value;
-            }
-#else
-            */
-            get; set;
-//#endif
         }
 
         [AProperty]
         public AList<Node> Children { get; set; } = new AList<Node>();
 
+
+        public Godot.Node GDNode;
+
+
         public Node()
         {
-            Name = this.GetType().Name;
+            GDNode = GenerateGDNode();
+            nodesByGDNodes[GDNode] = this;
+
+            GDNode.Name = this.GetType().Name;
+            GodotSettings.SceneRoot.AddChild(GDNode);
+
             Updater.Instance.AddUpdateable(this);
-            Start();
+            Updater.Instance.OnNextUpdate(Start);
+        }
+
+        protected virtual Godot.Node GenerateGDNode()
+        {
+            return new Godot.Node();
         }
 
         public void AddChild(Node child)
@@ -121,6 +153,7 @@ namespace Altimit.UI
 
         public virtual void Start()
         {
+
         }
 
         public virtual void Update()

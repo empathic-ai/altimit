@@ -11,12 +11,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using Altimit.UI.Unity;
 using UnityEngine.EventSystems;
-
+#endif
 namespace Altimit.UI
 {
     [AType(true)]
     public class Control : Node3D
     {
+#if UNITY
         [AProperty]
         public Vector2 Size
         {
@@ -227,26 +228,19 @@ namespace Altimit.UI
 
 
         }
-    }
-}
 #elif GODOT
-
-namespace Altimit.UI
-{
-    [AType(true)]
-    public class Control : Node3D
-    {
-
         [AProperty]
         public Vector2 AnchorMin
         {
             get
             {
-                throw new NotImplementedException();
+                return new Vector2(gdControl.AnchorLeft, gdControl.AnchorBottom);
             }
             set
             {
-                throw new NotImplementedException();
+                gdControl.LayoutMode = 1;
+                gdControl.AnchorTop = value.x;
+                gdControl.AnchorLeft = value.y;
             }
         }
 
@@ -255,11 +249,13 @@ namespace Altimit.UI
         {
             get
             {
-                throw new NotImplementedException();
+                return new Vector2(gdControl.AnchorRight, gdControl.AnchorTop);
             }
             set
             {
-                throw new NotImplementedException();
+                gdControl.LayoutMode = 1;
+                gdControl.AnchorRight = value.x;
+                gdControl.AnchorBottom = value.y;
             }
         }
 
@@ -273,6 +269,20 @@ namespace Altimit.UI
             {
             }
         }
+
+        [AProperty]
+        public Vector2 MinSize
+        {
+            get
+            {
+                return (Vector2)gdControl.CustomMinimumSize;
+            }
+            set
+            {
+                gdControl.CustomMinimumSize = value;
+            }
+        }
+
         [AProperty]
         public float Height
         {
@@ -308,13 +318,95 @@ namespace Altimit.UI
             }
         }
 
-        public Vector2 Size { get; set; }
+        public Vector2 Size
+        {
+            get
+            {
+                try
+                {
+                    return (Vector2)gdControl.Size;
+                } catch (NullReferenceException e)
+                {
+                    OS.Log(Name);
+                    return Vector2.Zero;
+                }
+            }
+            set
+            {
+                gdControl.Size = value;
+            }
+        }
+
         [AProperty]
         public bool FlexibleWidth { get; set; }
         [AProperty]
         public bool FlexibleHeight { get; set; }
-        public Vector3 LocalPosition { get; internal set; }
+        public Vector3 LocalPosition
+        {
+            get
+            {
+                return new Vector3(gdControl.Position.x, gdControl.Position.y, 0);
+            }
+            set
+            {
+                gdControl.Position = new Godot.Vector2(value.x, value.y);
+            }
+        }
+
+        [AProperty]
+        public bool IsVisible
+        {
+            get
+            {
+                return gdControl.Visible;
+            }
+            set
+            {
+                gdControl.Visible = value;
+            }
+        }
+
+        protected Godot.Control gdControl => GDNode as Godot.Control;
+
+        public Control() : base()
+        {
+        }
+
+        protected override Godot.Node GenerateGDNode()
+        {
+            return new Godot.Control();
+        }
+#endif
+
+        [AProperty]
+        public float MinWidth
+        {
+            get
+            {
+                return MinSize.x;
+            }
+            set
+            {
+                MinSize = new Vector2(value, MinSize.y);
+            }
+        }
+
+        [AProperty]
+        public float MinHeight
+        {
+            get
+            {
+                return MinSize.y;
+            }
+            set
+            {
+                MinSize = new Vector2(MinSize.x, value);
+            }
+        }
+
+        public virtual void SetVisibility(bool isVisible)
+        {
+            IsVisible = isVisible;
+        }
     }
 }
-
-#endif
