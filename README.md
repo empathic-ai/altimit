@@ -142,7 +142,7 @@ Altimit is available as a plugin for Godot, Unity, native Windows and native Lin
 Platform | Support |
 --- | --- | 
 Godot | Supported ✔️ |
-Unity | Supported ✔️ |
+Unity | Supported ✔️ | [Unity Package](https://github.com/meridian-xr/altimit-unity)
 Native Windows | Supported ✔️ |
 Native Linux | Supported ✔️ |
 Native macOS | Planned ➡️ |
