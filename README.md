@@ -2,7 +2,7 @@
     <img src="logo.png" width="500" alt="Altimit Logo">
 </p>
 
-<i>Note: This repository is being reorganized and will evolve significantly over the next few weeks.</i>
+<i>Note: This repository is being reorganized and will evolve significantly in the future.</i>
 
 ## Altimit
 
