@@ -159,7 +159,7 @@ Swift | Planned ➡️ |
 C++ | Pending |
 Javascript | Pending |
 
-## The Engine
+## The Engine (Planned)
 
 Altimit's Engine is an alternative to its plugins. Built on top of the Godot Engine, the Altimit Engine combines Godot's cross-platform support and open architecture with the utility of Altimit's framework. It's a fork of the main branch of the Godot Engine that includes some optimizations to provide the best possible experience of Altimit.
  
