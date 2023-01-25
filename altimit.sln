@@ -8,7 +8,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "altimit", "altimit.csproj", "{FD6EF758-FB52-45F0-ABF0-202576BAF12D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "altimit.generator", "generator\altimit.generator\altimit.generator.csproj", "{00458DAE-AFB9-412E-AD8E-08DF752B11AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Altimit", "core\Altimit.csproj", "{BD504E54-DC21-448D-A3CE-03A565995B31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,10 +18,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FD6EF758-FB52-45F0-ABF0-202576BAF12D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD6EF758-FB52-45F0-ABF0-202576BAF12D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD6EF758-FB52-45F0-ABF0-202576BAF12D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD6EF758-FB52-45F0-ABF0-202576BAF12D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00458DAE-AFB9-412E-AD8E-08DF752B11AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00458DAE-AFB9-412E-AD8E-08DF752B11AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00458DAE-AFB9-412E-AD8E-08DF752B11AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00458DAE-AFB9-412E-AD8E-08DF752B11AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD504E54-DC21-448D-A3CE-03A565995B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD504E54-DC21-448D-A3CE-03A565995B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD504E54-DC21-448D-A3CE-03A565995B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD504E54-DC21-448D-A3CE-03A565995B31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
