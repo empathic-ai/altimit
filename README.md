@@ -123,7 +123,7 @@ public class SignInView : View {
 ```
 ### Voice and Video
  
-Altimit uses WebRTC to enable peer to peer connections, including voice and video.
+Altimit uses WebRTC to enable peer to peer connections, including voice and video streaming.
 
 </details>
 
