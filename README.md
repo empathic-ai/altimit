@@ -156,10 +156,10 @@ Blender | Pending |
 Language | Support |
 --- | --- | 
 C# | Supported ✔️ |
-Python | Planned ➡️ |
-Swift | Planned ➡️ |
+Javascript | Planned ➡️ |
+Python | Pending |
+Swift | Pending |
 C++ | Pending |
-Javascript | Pending |
 
 ## The Engine (Planned)
 
