@@ -14,6 +14,8 @@ namespace Altimit.UI
         public static Vector2 ScreenSize => (Vector2)Godot.DisplayServer.ScreenGetSize(0) + new Vector2(Godot.DisplayServer.ScreenGetSize(1).x, 0);
 #elif WEB
         public static Vector2 ScreenSize { get; set; }
+#else
+        public static Vector2 ScreenSize { get; set; }
 #endif
         public static bool IsOutOfBounds(Vector2 screenPos)
         {

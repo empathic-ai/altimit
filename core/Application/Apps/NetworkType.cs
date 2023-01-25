@@ -1,4 +1,4 @@
-﻿namespace Altimit.Networking
+﻿namespace Altimit.Application.Apps
 {
     public enum NetworkType
     {

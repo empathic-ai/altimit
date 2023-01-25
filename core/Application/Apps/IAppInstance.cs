@@ -1,8 +1,7 @@
-﻿using Altimit;
-using Altimit.Networking;
+﻿using Altimit.Networking;
 using System;
 
-namespace Altimit
+namespace Altimit.Application.Apps
 {
     public interface AppInstance
     {

@@ -7,7 +7,7 @@ using Altimit.Networking;
 //using Unity.WebRTC;
 using UnityEngine;
 
-namespace Altimit
+namespace Altimit.Application.Apps
 {
     public struct AppPair
     {

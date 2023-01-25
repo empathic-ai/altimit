@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Altimit.Networking;
 
-namespace Altimit
+namespace Altimit.Application.Apps
 {
     // Legacy implementation for binding services to app modules
     // TODO: Possibly remove in favor of services with no explicit binding to app modules,

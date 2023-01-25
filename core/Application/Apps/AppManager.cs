@@ -1,6 +1,4 @@
-﻿using Altimit;
-using Altimit.Networking;
-using Altimit.Serialization;
+﻿using Altimit.Serialization;
 
 using System;
 //using Meridian.Core;
@@ -9,7 +7,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace Altimit
+namespace Altimit.Application.Apps
 {
     // TODO: Create more basic version of AppManager that doesn't depend on Unity's engine
     // Create custom init per OSSettings type and have AppManager call custom Init()
@@ -52,7 +50,7 @@ namespace Altimit
         public T OpenApp<T>(T app) where T : App
         {
             Apps.Add(app);
-            
+
             /*
             if (app.HasModule<RoomAM>())
             {
@@ -107,7 +105,7 @@ namespace Altimit
                 for (int i = 0; i < array.Length; i++)
                 {
                     var item = array[i];
-                    if (i > 0 && char.IsUpper(item) && !char.IsUpper(array[i-1]))
+                    if (i > 0 && char.IsUpper(item) && !char.IsUpper(array[i - 1]))
                     {
                         result.Add(' ');
                     }
