@@ -165,4 +165,4 @@ Altimit's Engine is an alternative to its plugins. Built on top of the Godot Eng
  
  Executables of the Altimit Engine and a repository for it will be released at a later date.
 
-<i>Note: Whenever possible, developers are encouraged to contribute to the main branch of Godot, rather than contributing directly to Altimit's fork of the Godot Engine. This limits fragmentation between the two projects!</i>
+<i>Note: Whenever possible, developers are encouraged to contribute to the main branch of Godot, rather than contributing directly to Altimit's fork of the Godot Engine. This limits fragmentation between the repositories!</i>
