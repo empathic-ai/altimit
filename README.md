@@ -6,6 +6,8 @@
 
 ## Altimit
 
+[Unity Package](https://github.com/meridian-xr/altimit-unity)
+
 Altimit is a flexible and lightweight framework for building an open Metaverse. You can use Altimit as an engine for creating your own Metaverse application, or as a plugin for creating a Metaverse application in your favorite game engine or IDE. Altimit allows your application to seamlessly connect with other applications to create a cohesive experience.
 
 <details>
@@ -137,8 +139,6 @@ Unlike [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omnivers
 
 Altimit is available as a plugin for Godot, Unity, native Windows and native Linux. Support is planned for native macOS and native iOS in the near future. If you'd like to see support for another platform or language, please consider contributing to the project.
 
-[Unity Package](https://github.com/meridian-xr/altimit-unity)
-    
  <i>As of now, C# is the primary language supported.</i>
  
 Platform | Support |
