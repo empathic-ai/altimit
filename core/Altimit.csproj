@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
     <Configurations>Debug;Release;Unity</Configurations>
   </PropertyGroup>
@@ -21,6 +21,7 @@
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
     <DefineConstants>$(DefineConstants)TRACE;UNITY_64</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   
   <ItemGroup>
@@ -31,11 +32,14 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="TextCopy" Version="6.2.1" />
     <PackageReference Include="WebSocketSharp-netstandard" Version="1.0.1" />
+    <PackageReference Include="Unity3D" Version="2.0.1" />
+    <PackageReference Include="Unity3D.UnityEngine.UI" Version="2018.3.5.1" />
   </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\generator\altimit.generator.csproj" />
     <ProjectReference Include="..\unity-webrtc\unity-webrtc.csproj" />
+    <ProjectReference Include="..\unity-textmeshpro\unity-textmeshpro.csproj" />
   </ItemGroup>
   
   <ItemGroup>
@@ -45,5 +49,20 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Resources\PackageManager\ProjectTemplates\libcache\com.unity.template.2d-6.1.0\Bee\artifacts\1900b0aE.dag\post-processed\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\unity-textmeshpro\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\dotween\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Unity3D" />
+    <None Remove="Unity3D.SDK" />
+    <None Remove="Unity3D.UnityEngine.UI" />
+    <None Remove="Unity.TextMeshPro" />
+    <None Remove="DOTween" />
+    <None Remove="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
 </Project>

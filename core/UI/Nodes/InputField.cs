@@ -58,7 +58,7 @@ namespace Altimit.UI
             {
                 tmpInputField.inputType = (TMP_InputField.InputType)value;
             }
-        }
+        } 
 
         public Action<string> OnValueChanged;
 

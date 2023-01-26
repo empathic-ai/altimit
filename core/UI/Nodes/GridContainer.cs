@@ -25,7 +25,6 @@ namespace Altimit.UI
         {
             get; set;
         }
-
 #elif GODOT
         public int Columns
         {

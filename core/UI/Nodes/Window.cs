@@ -139,7 +139,7 @@ namespace Altimit.UI {
         public bool Borderless { get; set; }
 #endif
 
-        Image highlightImage;
+        Image highlightImage { get; set; }
 
 #if TEMP
         public Canvas Canvas
@@ -162,6 +162,10 @@ namespace Altimit.UI {
 #if UNITY_64
         //protected Sequence sequence;
 #elif WEB
+#if UNITY
+        protected Sequence sequence;
+#elif WEB
+
         protected override void BuildRenderTree(RenderTreeBuilder builder)
         {
             // TODO: Possibly add region separation back in
@@ -173,19 +177,6 @@ namespace Altimit.UI {
             //builder.CloseRegion();
             builder.CloseElement();
         }
-#endif
-
-        //[SerializeField]
-        protected Node3D renderGO;
-        //[SerializeField]
-        protected Node3D canvasGO;
-        /*
-        protected override void Render() {
-
-        }
-        */
-
-
 
         public void ToggleVisibility()
         {
