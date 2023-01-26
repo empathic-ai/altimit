@@ -1,0 +1,28 @@
+{
+    "name": "Altimit.Generator",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8b575abb1f8bd4bd3ab789614e147b8e"
+    ],
+    "includePlatforms": [
+        "Stadia"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Microsoft.CodeAnalysis.CSharp.dll",
+        "Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "Microsoft.CodeAnalysis.CSharp.Scripting.dll",
+        "Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "Microsoft.Extensions.DependencyInjection.dll",
+        "Microsoft.CodeAnalysis.dll",
+        "Microsoft.CodeAnalysis.Workspaces.dll",
+        "Microsoft.CodeAnalysis.Scripting.dll",
+        "System.Collections.Immutable.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
