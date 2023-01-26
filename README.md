@@ -19,7 +19,8 @@ Altimit is a flexible and lightweight framework for building an open Metaverse. 
 
 ### Intuitive Replication
  
- Describe the data you want synchronized between applications using basic property attributes or a fluent API. Altimit's replication system will handle the rest.
+Describe the data you want synchronized between applications using basic property attributes. Altimit's replication system handles the rest.
+
 ```C#
 [AType]
 public class User
@@ -45,20 +46,8 @@ Data is automatically cached locally and remotely.
 
 ### Seamless RPCs
  
-Calling methods on remote classes is as intuitive as calling methods on local ones.
+Calling methods on remote objects is as easy as calling methods on local ones.
 ```C#
-// The interface of a server
-[AType]
-public interface IServer
-{
-
-    [AMethod]
-    Task<User> SignIn(string email, string password);
-    
-    [AMethod]
-    Task Logout();
-    
-}
 
 // On the client:
 public class Client {
@@ -133,34 +122,34 @@ Altimit uses WebRTC to enable peer to peer connections, including voice and vide
 
 <i>The logical symbol ∀ is used to represent universal quantification in predicate logic, where it is typically read as "for all".</i>
 
-Unlike various [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omniverse_License_Agreement.html) Metaverse frameworks, Altimit is entirely free and open source under the MIT License. Anyone is welcome to use and contribute to the framework. The goal of this project is to create a super accessible and useful Metaverse framework for developers and end-users. Let's make the future connected, let's make it open, and let's make it beautiful.
+Unlike [current](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omniverse_License_Agreement.html) Metaverse frameworks, Altimit is entirely free and open source under the MIT License. Anyone is welcome to use and contribute to the framework. The goal of this project is to create a super accessible and useful Metaverse framework for developers and end-users. Let's make the future connected, and let's make it beautiful.
 
 ## Compatibility / Plugins
 
-Altimit is available as a plugin for Godot, Unity, native Windows and native Linux. Support is planned for native macOS and native iOS in the near future. If you'd like to see support for another platform or language, please consider contributing to the project.
+Altimit is available as a plugin for Godot and Unity. Support is planned for Unreal Engine and Native Web in the near future. If you'd like to see support for another platform or language, please consider contributing to the project!
 
- <i>As of now, C# is the primary language supported.</i>
+ <i>As of now, C# is the primary programming language supported.</i>
  
 Platform | Support |
 --- | --- | 
-Godot | Supported ✔️ |
-Unity | Supported ✔️ |
+Godot Engine | Supported ✔️ |
+Unity Engine | Supported ✔️ |
+Unreal Engine | Planned ➡️ |
 Native Web | Planned ➡️ |
 Native iOS | Pending |
 Native macOS | Pending |
 Native Windows | Pending |
 Native Linux | Pending |
 Native Android | Pending  |
-Unreal | Pending |
 Blender | Pending |
 
 Language | Support |
 --- | --- | 
 C# | Supported ✔️ |
 Javascript | Planned ➡️ |
+C++ | Planned ➡️ |
 Python | Pending |
 Swift | Pending |
-C++ | Pending |
 
 ## The Engine (Planned)
 
