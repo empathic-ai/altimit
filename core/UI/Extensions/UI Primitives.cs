@@ -4,7 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
 using SoftMasking;
 using TMPro;
 using UnityEngine;
@@ -59,7 +59,7 @@ namespace Altimit.UI
         public static Node ToggleGroup(this Node node)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<BetterToggleGroup>();
 #elif GODOT
             return null;
@@ -71,7 +71,7 @@ namespace Altimit.UI
         public static Node OnToggle(this Node node, Action<ToggleButton> onToggle)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<BetterToggleGroup>(x=>x.onToggle += onToggle);
 #elif GODOT
             return node;
@@ -90,7 +90,7 @@ namespace Altimit.UI
         public static Node Panel(this Node node, Action<Node> onRender, params Node[] childPanels)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.
                 Hold<View>(x => { x.Init(onRender, childPanels); });
 #elif GODOT
@@ -103,7 +103,7 @@ namespace Altimit.UI
         public static Node GridList(this Node node, int padding = AUI.SmallSpace, int spacing = AUI.SmallSpace)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return go.Hold<GridLayoutGroup>(x=>x.spacing = Vector2.one*spacing).SetPadding(padding).Hold<StretchingGrid>();
 #elif GODOT
             return go;
@@ -122,7 +122,7 @@ namespace Altimit.UI
         public static Node HList(this Node go, int padding = SmallSpace, int spacing = SmallSpace, Anchor alignment = Anchor.MiddleCenter)
         {
             
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return go.Hold<HorizontalLayoutGroup>(x =>
             {
                 x.childAlignment = alignment;
@@ -143,7 +143,7 @@ namespace Altimit.UI
         public static Node CanvasGroup(this Node node, float alpha = 1)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<CanvasGroup>(x => { x.alpha = alpha; });
 #elif GODOT
             */
@@ -154,7 +154,7 @@ namespace Altimit.UI
         public static Node Canvas(this Node node)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             node.Hold<Canvas>(x => {
                 x.planeDistance = 1;
                 x.additionalShaderChannels = AdditionalCanvasShaderChannels.Normal;
@@ -179,7 +179,7 @@ namespace Altimit.UI
         public static Node Slider(this Node node)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             RectTransform fillRect, handleRect;
             return node.Hold(
                 AUI.UI.Image(null, AUI.Clear).OnHeld(x => x.Stretch(-AUI.SmallSpace)).Hold(
@@ -207,7 +207,7 @@ namespace Altimit.UI
         public static Node Bar(this Node node, Material frontMaterial = null, Material backMaterial = null)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.RoundImage(AUI.SmallSize, backMaterial).SetHeight(AUI.MiniSize).Hold(
                     AUI.UI.RoundImage(AUI.SmallSize, frontMaterial).Stretch().Hold<RectTransform>(x=>x.pivot = new Vector2(0,.5f))
                 );
@@ -221,7 +221,7 @@ namespace Altimit.UI
         public static Node Search(this Node node, Func<string, CancellationToken, Task> onSearchRequest = null)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<Search>(x=>x.Init(onSearchRequest)).RoundImage(AUI.Default).Shadow().MinWidth(200).HList().SetHeight(AUI.SmallSize).Hold(
                     UI.Input("Search", InputType.Standard, 0, true, false).SetSprite(null),
                     UI.Image(GetSprite("Search"), AUI.MediumGrey).SetSize(TinySize)
@@ -251,7 +251,7 @@ namespace Altimit.UI
         public static Node ScrollView(this Node node, Node contentNode, int spacing = 0, int padding = 0, bool useBar = true)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             ScrollRect scrollRect;
             Scrollbar scrollbar;
             Node handleNode;
@@ -302,7 +302,7 @@ namespace Altimit.UI
         {
             float width = 0;
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             // Compute scale of the target point size relative to the sampling point size of the font asset.
             float pointSizeScale = fontSize / (fontAsset.faceInfo.pointSize * fontAsset.faceInfo.scale);
             pointSizeScale *= .9f;
@@ -328,7 +328,7 @@ namespace Altimit.UI
         public static Node Input(this Node node, string placeholder = null, InputType inputType = InputType.Standard, int padding = SmallSpace, bool isSingleLine = true, bool useImage = true)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
            Node placeholderGO, textGO, viewportGO;
 
             var textAlignment = isSingleLine ? TextAnchor.MiddleLeft : TextAnchor.UpperLeft;
@@ -374,7 +374,7 @@ namespace Altimit.UI
         public static Node Button(this Node node, string text = null, Material material = null, Material textMaterial = null, Sprite buttonSprite = null, bool useShadow = true, bool useChildSize = true)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             if (material == null)
                 material = SemiTransparent;
             if (material == Default && textMaterial == null)
@@ -410,7 +410,7 @@ namespace Altimit.UI
         public static Node ImageButton(this Node node, string text = null, Sprite sprite = null, Material material = null)
         {
             
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             if (material == null)
                 material = Purple;
 
@@ -451,7 +451,7 @@ namespace Altimit.UI
         public static Node ToggleButton(this Node node, string text = null, Material material = null, Material textMaterial = null, bool useShadow = true)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             if (material == null)
                 material = Default;
             if (material == Default && textMaterial == null)
@@ -479,7 +479,7 @@ namespace Altimit.UI
         public static Node ScaleButton(this Node node, string text = null, Material material = null, bool useChildSize = true)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Button(text, material, null, null, true, useChildSize).Hold<ScaleButton>();
 #elif GODOT
             return node;
@@ -491,7 +491,7 @@ namespace Altimit.UI
         public static T Scale<T>(this T node) where T : Node
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<ScaleButton>();
 #elif GODOT
             return node;
@@ -503,7 +503,7 @@ namespace Altimit.UI
         public static Node Dropdown(this Node node, string[] options)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             Node scrollViewGO;
             Node arrowGO;
             RectTransform template;
@@ -553,7 +553,7 @@ namespace Altimit.UI
             return node;
 
             
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             Node arrowGO;
             BackButton backButton;
             node.Button().Hold<Button>(x=>x.transition = Selectable.Transition.None).Image(AUI.GetSprite("Solid")).SetHeight(SmallSize).ExpandWidth(true).Shadow().Hold(
@@ -581,7 +581,7 @@ namespace Altimit.UI
             if (node.Has<ToggleButton>())
                 return node;
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<Toggle>(x=> { x.transition = Selectable.Transition.None; x.toggleTransition = UnityEngine.UI.Toggle.ToggleTransition.None; }).
                 OnClick(PlayClick).Call(OnToggleCreated);
 #elif GODOT
@@ -591,7 +591,7 @@ namespace Altimit.UI
 
         public static void PlayClick()
         {
-#if UNITY_LEGACY
+#if UNITY_64_LEGACY
             var audioSource = DeAudioManager.Play(GetSound("Click"), .25f, Random.Range(.9f, 1.2f));
             audioSource.audioSource.bypassEffects = true;
 #elif GODOT
@@ -601,7 +601,7 @@ namespace Altimit.UI
         public static T Button<T>(this T node) where T : Node
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<Button>(x=>x.transition = Selectable.Transition.None).OnClick(PlayClick).Call(OnButtonCreated);
 #elif GODOT
             */

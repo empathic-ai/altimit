@@ -503,7 +503,10 @@ namespace Altimit.Networking
             peerConnection?.Dispose();
             peerConnection = null;
         }
-
+        
+        public void Update()
+        {
+        }
         /*
         void ThrowIfRemoteConnected()
         {

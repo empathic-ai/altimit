@@ -68,7 +68,7 @@ namespace Altimit.UI
         {
             return new Vector3(v.x, v.y, v.z);
         }
-#elif UNITY
+#elif UNITY_64
         public static explicit operator Vector3(UnityEngine.Vector3 v)
         {
             return new Vector3(v.x, v.y, v.z);

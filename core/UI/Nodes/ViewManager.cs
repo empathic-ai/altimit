@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
 using SoftMasking;
 using TMPro;
 using UnityEngine;
@@ -68,10 +68,10 @@ namespace Altimit.UI
         void Awake()
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             if (!Application.isPlaying)
             {
-#if UNITY_EDITOR
+#if UNITY_64_EDITOR
                 Selection.selectionChanged += UpdateSelectedPanel;
 #endif
                 return;
@@ -86,7 +86,7 @@ namespace Altimit.UI
         {
             base.Start();
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             if (!Application.isPlaying) return;
             if (BackButtonGO)
             {
@@ -105,7 +105,7 @@ namespace Altimit.UI
         void OnDisable ()
         {
             /*
-#if UNITY_EDITOR
+#if UNITY_64_EDITOR
             Selection.selectionChanged -= UpdateSelectedPanel;
 #endif
             */

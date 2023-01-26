@@ -8,7 +8,7 @@ namespace Altimit.UI
         public static T ExpandSize<T>(this T node, bool expandSize = true) where T : Control
         {
             node.ExpandSize = expandSize;
-#if UNITY_LEGACY
+#if UNITY_64_LEGACY
              return node.Hold<LayoutElement>(x => { x.flexibleWidth = isInfinite ? 10000 : 1; x.preferredWidth = includePreferred ? 1 : -1; });
 #endif
             return node;
@@ -17,7 +17,7 @@ namespace Altimit.UI
         public static T ExpandWidth<T>(this T node, bool expandWidth = true) where T : Control
         {
             node.ExpandWidth = expandWidth;
-#if UNITY_LEGACY
+#if UNITY_64_LEGACY
              return node.Hold<LayoutElement>(x => { x.flexibleWidth = isInfinite ? 10000 : 1; x.preferredWidth = includePreferred ? 1 : -1; });
 #endif
             return node;
@@ -28,7 +28,7 @@ namespace Altimit.UI
             node.ExpandHeight = expandHeight;
             return node;
 
-#if UNITY_LEGACY
+#if UNITY_64_LEGACY
             return node.Hold<LayoutElement>(x => { x.flexibleHeight = 10000; });
 #endif
         }
@@ -46,7 +46,7 @@ namespace Altimit.UI
         public static T SetSize<T>(this T node, Vector2 size) where T : Control
         {
             node.Size = size;
-#if UNITY_LEGACY
+#if UNITY_64_LEGACY
             return node.Hold<RectTransform>(x => { x.sizeDelta = size; }).
                 Hold<LayoutElement>(x => { x.minHeight = size.y; x.minWidth = size.x; x.preferredHeight = size.y; x.preferredWidth = size.x; });
 #elif GODOT
@@ -60,7 +60,7 @@ namespace Altimit.UI
         {
             node.Height = height;
             return node;
-#if UNITY_LEGACY
+#if UNITY_64_LEGACY
             return node.Hold<RectTransform>(x => { x.sizeDelta = new Vector2(x.sizeDelta.x, height); }).
                 Hold<LayoutElement>(x => { x.preferredHeight = height; x.preferredWidth = -1; }).
                 MinHeight(height);
@@ -72,7 +72,7 @@ namespace Altimit.UI
             node.FitWidth = fitWidth;
             node.FitHeight = fitHeight;
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<ContentSizeFitter>(x =>
             {
                 x.horizontalFit = horizontalFit ? ContentSizeFitter.FitMode.PreferredSize : ContentSizeFitter.FitMode.Unconstrained;
@@ -87,7 +87,7 @@ namespace Altimit.UI
         public static Node MinHeight(this Node node, float height)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<LayoutElement>(x => x.minHeight = height);
 #elif GODOT
             */
@@ -98,7 +98,7 @@ namespace Altimit.UI
         public static Node StretchVertical(this Node node, float minY = 0, float maxY = 0)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.SetAnchor(new Vector2(.5f, 0), new Vector2(.5f, 1)).Hold<RectTransform>(z =>
             {
                 z.offsetMin = new Vector2(z.offsetMin.x, minY);
@@ -113,7 +113,7 @@ namespace Altimit.UI
         public static Node StretchHorizontal(this Node node, float minX = 0, float maxX = 0)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.SetAnchor(new Vector2(0, .5f), new Vector2(1, .5f)).Hold<RectTransform>(z =>
             {
                 z.offsetMin = new Vector2(minX, z.offsetMin.y);
@@ -128,7 +128,7 @@ namespace Altimit.UI
         public static Node SetChildAlignment(this Node node, Anchor childAlignment)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Get<HorizontalOrVerticalLayoutGroup>(x => { x.childAlignment = childAlignment; });
 #elif GODOT
             */
@@ -144,7 +144,7 @@ namespace Altimit.UI
         public static Node SetPadding(this Node node, Vector4 margin)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<LayoutGroup>(x =>
             {
                 x.padding = new RectOffset((int)margin.x, (int)margin.y, (int)margin.z, (int)margin.w);
@@ -158,7 +158,7 @@ namespace Altimit.UI
         public static Node SetSpacing(this Node node, float spacing)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<HorizontalOrVerticalLayoutGroup>(x =>
             {
                 x.spacing = spacing;
@@ -171,7 +171,7 @@ namespace Altimit.UI
 
         public static Node SetPositionZ(this Node node, float positionZ)
         {
-#if UNITY_LEGACY
+#if UNITY_64_LEGACY
             return node.Hold<RectTransform>(x =>
             {
                 x.anchoredPosition3D = new Vector3(x.anchoredPosition.x, x.anchoredPosition.y, positionZ);
@@ -185,7 +185,7 @@ namespace Altimit.UI
         public static Node SetPositionY(this Node node, float positionY)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<Transform>(x =>
             {
                 x.localPosition = new Vector3(x.localPosition.x, positionY, x.localPosition.z);
@@ -200,7 +200,7 @@ namespace Altimit.UI
 
         public static Node SetPosition(this Node node, Vector2 position)
         {
-#if UNITY_LEGACY
+#if UNITY_64_LEGACY
             return node.Hold<RectTransform>(x =>
             {
                 x.anchoredPosition = position;
@@ -240,7 +240,7 @@ namespace Altimit.UI
             if (parent != null)
             {
                 // TODO: currently only works for 0 margin, change math for position and size to support other margins
-                node.LocalPosition = Vector3.Zero;
+                node.LocalPosition = Vector2.Zero;
                 // TODO: Possibly uncomment if stretching stops working?
                 //node.Size = parent.Size;
             }
@@ -254,7 +254,7 @@ namespace Altimit.UI
 
         public static Node IgnoreLayout(this Node node, bool ignoreLayout = true)
         {
-#if UNITY_LEGACY
+#if UNITY_64_LEGACY
             return node.Hold<LayoutElement>(x => { x.ignoreLayout = ignoreLayout; });
 #elif GODOT
             return node;

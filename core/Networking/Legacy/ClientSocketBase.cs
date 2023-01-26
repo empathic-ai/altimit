@@ -131,7 +131,7 @@ namespace Altimit.Networking
             }
             catch (Exception e)
             {
-#if UNITY_EDITOR
+#if UNITY_64_EDITOR
                 if (RethrowExceptionsInEditor)
                     throw;
 #endif

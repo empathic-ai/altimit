@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-#if UNITY_2017_1_OR_NEWER
+#if UNITY_64
 using UnityEngine;
 using Altimit.UI.Unity;
 #endif
@@ -13,7 +13,7 @@ namespace Altimit.UI
     [AType]
     public class Node3D : Node
     {
-#if UNITY_2017_1_OR_NEWER
+#if UNITY_64
         [AProperty]
         public bool IsVisible
         {
@@ -114,12 +114,8 @@ namespace Altimit.UI
             }
         }
 
-        public GameObject GameObject = new GameObject();
-
         public Node3D() : base()
         {
-            GameObject.name = Name;
-            GameObject.Hold<NodeMonoBehaviour>(x => x.Node = this);
         }
 
         bool isParentNotRendered = false;
@@ -231,11 +227,12 @@ namespace Altimit.UI
         {
             return new Godot.Node3D();
         }
-#endif
+#else
 
         public Node3D() : base()
         {
             
         }
+#endif
     }
 }

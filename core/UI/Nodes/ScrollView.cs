@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Altimit.UI;
 
-#if UNITY
+#if UNITY_64
 using Altimit.UI.Unity;
 using Altimit;
 using TMPro;
@@ -17,7 +17,7 @@ namespace Altimit.UI
     [AType]
     public class ScrollView : Control
     {
-        public Node3D Content { get; set; }
+        public Control Content { get; set; }
 
         public ScrollView() : base()
         {

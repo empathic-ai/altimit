@@ -51,7 +51,7 @@ namespace Altimit.UI
         }
 
 
-#if UNITY
+#if UNITY_64
         public static explicit operator Color(UnityEngine.Color c)
         {
             return new Color(c.r, c.g, c.b, c.a);

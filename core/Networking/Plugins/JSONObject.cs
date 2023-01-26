@@ -3,7 +3,7 @@
 #define USEFLOAT	//Use floats for numbers instead of doubles	(enable if you're getting too many significant digits in string output)
 //#define POOLING	//Currently using a build setting for this one (also it's experimental)
 
-#if UNITY_2 || UNITY_3 || UNITY_4 || UNITY_5
+#if UNITY_64_2 || UNITY_3 || UNITY_4 || UNITY_5
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 #endif
@@ -310,7 +310,7 @@ public class JSONObject : IEnumerable
                 if (str[0] != '[' && str[0] != '{')
                 {
                     type = Type.NULL;
-#if UNITY_2 || UNITY_3 || UNITY_4 || UNITY_5
+#if UNITY_64_2 || UNITY_3 || UNITY_4 || UNITY_5
                     Console.WriteLineWarning
 #else
 					Debug.WriteLine
@@ -321,7 +321,7 @@ public class JSONObject : IEnumerable
             }
             if (str.Length > 0)
             {
-#if UNITY_WP8 || UNITY_WSA
+#if UNITY_64_WP8 || UNITY_WSA
 				if (str == "true") {
 					type = Type.BOOL;
 					b = true;
@@ -420,7 +420,7 @@ public class JSONObject : IEnumerable
                             catch (System.FormatException)
                             {
                                 type = Type.NULL;
-#if UNITY_2 || UNITY_3 || UNITY_4 || UNITY_5
+#if UNITY_64_2 || UNITY_3 || UNITY_4 || UNITY_5
                                 Console.WriteLineWarning
 #else
 								Debug.WriteLine
@@ -831,7 +831,7 @@ public class JSONObject : IEnumerable
         {
             if (right.Count > left.Count)
             {
-#if UNITY_2 || UNITY_3 || UNITY_4 || UNITY_5
+#if UNITY_64_2 || UNITY_3 || UNITY_4 || UNITY_5
                 Console.WriteLineError
 #else
 				Debug.WriteLine
@@ -904,7 +904,7 @@ public class JSONObject : IEnumerable
         //Profiler.BeginSample("JSONprint");
         if (depth++ > MAX_DEPTH)
         {
-#if UNITY_2 || UNITY_3 || UNITY_4 || UNITY_5
+#if UNITY_64_2 || UNITY_3 || UNITY_4 || UNITY_5
             Console.WriteLine
 #else
 			Debug.WriteLine
@@ -1065,7 +1065,7 @@ public class JSONObject : IEnumerable
         //Profiler.BeginSample("JSONprint");
         if (depth++ > MAX_DEPTH)
         {
-#if UNITY_2 || UNITY_3 || UNITY_4 || UNITY_5
+#if UNITY_64_2 || UNITY_3 || UNITY_4 || UNITY_5
             Console.WriteLine
 #else
 			Debug.WriteLine
@@ -1207,7 +1207,7 @@ public class JSONObject : IEnumerable
         //Profiler.EndSample();
     }
     #endregion
-#if UNITY_2 || UNITY_3 || UNITY_4 || UNITY_5
+#if UNITY_64_2 || UNITY_3 || UNITY_4 || UNITY_5
     public static implicit operator WWWForm(JSONObject obj)
     {
         WWWForm form = new WWWForm();
@@ -1270,7 +1270,7 @@ public class JSONObject : IEnumerable
                     case Type.NUMBER: result.Add(keys[i], val.n + ""); break;
                     case Type.BOOL: result.Add(keys[i], val.b + ""); break;
                     default:
-#if UNITY_2 || UNITY_3 || UNITY_4 || UNITY_5
+#if UNITY_64_2 || UNITY_3 || UNITY_4 || UNITY_5
                         Console.WriteLineWarning
 #else
 						Debug.WriteLine
@@ -1281,7 +1281,7 @@ public class JSONObject : IEnumerable
             }
             return result;
         }
-#if UNITY_2 || UNITY_3 || UNITY_4 || UNITY_5
+#if UNITY_64_2 || UNITY_3 || UNITY_4 || UNITY_5
         Console.WriteLine
 #else
 		Debug.WriteLine

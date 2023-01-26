@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-#if UNITY
+#if UNITY_64
 using TMPro;
 using UnityEngine;
 

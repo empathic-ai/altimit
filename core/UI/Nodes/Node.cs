@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Altimit;
-#if UNITY_2017_1_OR_NEWER
+#if UNITY_64
 using UnityEngine;
 using Altimit.UI.Unity;
 #elif WEB
@@ -26,7 +26,10 @@ namespace Altimit.UI
 #endif
         IUpdateable, IEnumerable<Node>
     {
-#if GODOT
+
+#if UNITY_64
+        public GameObject GameObject = new GameObject();
+#elif GODOT
         static Dictionary<Godot.Node, Node> nodesByGDNodes = new Dictionary<Godot.Node, Node>();
 #endif
         [AProperty]
@@ -71,7 +74,7 @@ namespace Altimit.UI
 
         private Node parent
         {
-#if UNITY_2017_1_OR_NEWER
+#if UNITY_64
             get
             {
                 if (GameObject.transform.parent == null)
@@ -149,7 +152,10 @@ namespace Altimit.UI
 
         public Node() : base()
         {
-#if GODOT
+#if UNITY_64
+            GameObject.name = Name;
+            GameObject.Hold<NodeMonoBehaviour>(x => x.Node = this);
+#elif GODOT
             GDNode = GenerateGDNode();
             nodesByGDNodes[GDNode] = this;
 
@@ -199,6 +205,24 @@ namespace Altimit.UI
         {
             ChildContent?.Invoke(builder);
         }
+
+        protected void UpdateState()
+        {
+            if (isInitialized)
+            {
+                StateHasChanged();
+            }
+        }
+
+        bool isInitialized = false;
+
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+
+            isInitialized = true;
+        }
+
 #endif
         public void AddChild(Node child)
         {
@@ -234,23 +258,6 @@ namespace Altimit.UI
 
             UpdateState();
 #endif
-        }
-
-        protected void UpdateState()
-        {
-            if (isInitialized)
-            {
-                StateHasChanged();
-            }
-        }
-
-        bool isInitialized = false;
-
-        protected override void OnInitialized()
-        {
-            base.OnInitialized();
-
-            isInitialized = true;
         }
 
         public virtual void OnParentChanged()

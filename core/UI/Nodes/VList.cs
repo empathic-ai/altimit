@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#if UNITY
+#if UNITY_64
 using UnityEngine;
 using UnityEngine.UI;
 using Altimit.UI.Unity;
@@ -18,9 +18,9 @@ namespace Altimit.UI
     public class VList : Container
     {
 
-#if UNITY
+#if UNITY_64
         [AProperty]
-        public override Anchor Anchor
+        public override Anchor ContainerAnchor
         {
             get
             {

@@ -1,8 +1,10 @@
 ﻿//using UnityEngine;
 
-#if UNITY
+#if UNITY_64
 using Altimit.UI.Unity;
-using DG.Tweening;
+//using DG.Tweening;
+#elif WEB
+using Microsoft.AspNetCore.Components.Rendering;
 #endif
 
 using Altimit;
@@ -10,7 +12,6 @@ using Altimit.UI;
 using Altimit.Networking;
 using System.Runtime.CompilerServices;
 using System.Net;
-using Microsoft.AspNetCore.Components.Rendering;
 
 namespace Altimit.UI {
     public class Window : Node
@@ -158,8 +159,20 @@ namespace Altimit.UI {
         }
 #endif
 
-#if UNITY
-        protected Sequence sequence;
+#if UNITY_64
+        //protected Sequence sequence;
+#elif WEB
+        protected override void BuildRenderTree(RenderTreeBuilder builder)
+        {
+            // TODO: Possibly add region separation back in
+            builder.OpenElement(0, "div");
+            builder.AddAttribute(1, nameof(this.Name), Microsoft.AspNetCore.Components.BindConverter.FormatValue(Name));
+            builder.AddAttribute(2, "style", "width: 100%; height: 100%; margin: 0px; padding: 0px; position: fixed; left: 0; top: 0;"); //Microsoft.AspNetCore.Components.BindConverter.FormatValue(ChildrenDirty));
+            //builder.OpenRegion(2);
+            RenderChildren(builder);
+            //builder.CloseRegion();
+            builder.CloseElement();
+        }
 #endif
 
         //[SerializeField]
@@ -172,17 +185,7 @@ namespace Altimit.UI {
         }
         */
 
-        protected override void BuildRenderTree(RenderTreeBuilder builder)
-        {
-            // TODO: Possibly add region separation back in
-            builder.OpenElement(0, "div");
-            builder.AddAttribute(1, nameof(this.Name), Microsoft.AspNetCore.Components.BindConverter.FormatValue(Name));
-            builder.AddAttribute(2, "style", "width: 100%; height: 100%; margin: 0px; padding: 0px; position: fixed; left: 0; top: 0;"); //Microsoft.AspNetCore.Components.BindConverter.FormatValue(ChildrenDirty));
-            //builder.OpenRegion(2);
-            RenderChildren(builder);
-            //builder.CloseRegion();
-            builder.CloseElement();
-        }
+
 
         public void ToggleVisibility()
         {

@@ -4,7 +4,9 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+#if !UNITY_64
 using TextCopy;
+#endif
 
 namespace Altimit.UI
 {
@@ -144,7 +146,9 @@ namespace Altimit.UI
 
         public static void SetTextInClipboard(string text)
         {
+#if !UNITY_64
             ClipboardService.SetText(text);
+#endif
         }
     }
 }

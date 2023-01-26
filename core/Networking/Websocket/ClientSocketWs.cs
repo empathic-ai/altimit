@@ -3,8 +3,8 @@ using System.IO;
 using System.Net;
 using System.Threading.Tasks;
 using UnityEngine;
-using System.Security.Policy;
-using System.ComponentModel.DataAnnotations;
+//using System.Security.Policy;
+//using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography.X509Certificates;
 #if GODOT
 using Godot;

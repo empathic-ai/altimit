@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#if UNITY
+#if UNITY_64
 using UnityEngine;
 using UnityEngine.UI;
 using Altimit.UI.Unity;
@@ -14,7 +14,18 @@ namespace Altimit.UI
     [AType(true)]
     public class GridContainer : Container
     {
-#if UNITY
+#if UNITY_64
+        public override Anchor ContainerAnchor { get; set; }
+        public override bool ExpandChildWidth { get; set; }
+        public override bool ExpandChildHeight { get; set; }
+        public override bool FitWidth { get; set; }
+        public override bool FitHeight { get; set; }
+        public override float Padding { get; set; }
+        public override float Spacing
+        {
+            get; set;
+        }
+
 #elif GODOT
         public int Columns
         {

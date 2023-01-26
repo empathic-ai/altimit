@@ -102,7 +102,11 @@ namespace Altimit.Serialization
                 object assetFormatter;
                 if (AssetFormatters.TryGetValue(type, out assetFormatter))
                 {
-                    return await ((dynamic)assetFormatter).DeserializeAsync(bytes, cancellationToken);
+                    // TODO: Possibly device a cleaner solution
+                    // Task<object> may not work
+                    var task = (Task<object>)assetFormatter.GetType().GetMethod("DeserializeAsync").
+                        Invoke(assetFormatter, new object[] { bytes, cancellationToken });
+                    return await task;//((dynamic)assetFormatter).DeserializeAsync(bytes, cancellationToken);
                 }
 
                 using (var ms = new MemoryStream(bytes))

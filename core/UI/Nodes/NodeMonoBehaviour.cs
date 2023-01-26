@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Altimit;
-#if UNITY_2017_1_OR_NEWER
+#if UNITY_64
 using UnityEngine;
 
 namespace Altimit.UI

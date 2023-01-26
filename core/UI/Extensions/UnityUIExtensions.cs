@@ -1,5 +1,5 @@
-﻿#if UNITY_2017_1_OR_NEWER
-using LeTai.TrueShadow;
+﻿#if UNITY_64
+//using LeTai.TrueShadow;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,7 +24,7 @@ namespace Altimit.UI.Unity
         /*
         public static Node Update(this Node node)
         {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             LayoutRebuilder.ForceRebuildLayoutImmediate(node.Get<RectTransform>());
             return node;
 #elif GODOT
@@ -338,6 +338,9 @@ namespace Altimit.UI.Unity
                 }
             }
             */
+
+            // TODO: Reimpliment with free solution
+            /*
             return go.Hold<TrueShadow>(x=> {
                 x.Size = 15;
                 x.Spread = 0;
@@ -345,6 +348,8 @@ namespace Altimit.UI.Unity
                 x.OffsetAngle = 0;
                 x.Color = new Color(0, 0, 0, .33f);
             });
+            */
+            return go;
         }
 
         public static GameObject SetAnchor(this GameObject go, UnityEngine.Vector2 anchorMin, UnityEngine.Vector2 anchorMax)
@@ -564,7 +569,7 @@ namespace Altimit.UI.Unity
         /*
         public static Node Release(this Node node)
         {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             node.transform.DetachChildren();
             return node;
 #elif GODOT
@@ -664,7 +669,7 @@ namespace Altimit.UI.Unity
         /*
         public static Node SetParent(this Node node, Node parent, bool setPosition = false, bool setRotation = false, bool setScale = false)
         {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             node.transform.SetParent(parent.transform);
             if (setPosition)
                 node.transform.localPosition = Vector3.zero;

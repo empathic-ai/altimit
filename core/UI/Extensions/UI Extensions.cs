@@ -1,6 +1,6 @@
 ﻿using System;
 /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
 using SoftMasking;
 using TMPro;
 using UnityEngine;
@@ -33,7 +33,7 @@ namespace Altimit.UI
         public static Node SetMaterial(this Node node, Material material = null)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             if (node.AddOrGet<Image>().material.name == "Default UI Material")
             {
                 node.AddOrGet<Image>().material = Default;
@@ -50,7 +50,7 @@ namespace Altimit.UI
         public static Node OnValueChanged(this Node go, Action<bool> action)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             go.Toggle().Hold<Toggle>(x => x.onValueChanged.AddListener(new UnityAction<bool>(action)));
 #elif GODOT
 
@@ -62,7 +62,7 @@ namespace Altimit.UI
         public static Node OnValueChanged(this Node go, Action<float> action)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             go.Hold<Slider>(x => x.onValueChanged.AddListener(new UnityAction<float>(action)));
 #elif GODOT
 
@@ -81,7 +81,7 @@ namespace Altimit.UI
         {
             //go.Hold<Image>(x => x.enabled = showMaskGraphic);
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<Mask>(x=> x.showMaskGraphic = showMaskGraphic);
 #elif GODOT
             */
@@ -91,7 +91,7 @@ namespace Altimit.UI
         public static T SoftMask<T>(this T node, bool showMaskGraphic = true) where T : Node
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             // Redirecting to regular mask due to shading error when VR is in use--TODO: fix shader
             //return go.Mask(showMaskGraphic);
             node.Hold<Image>(x => x.enabled = showMaskGraphic);
@@ -104,7 +104,7 @@ namespace Altimit.UI
         public static Node ChildControl(this Node node, bool childControlWidth = true, bool childControlHeight = true)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Get<HorizontalOrVerticalLayoutGroup>(x =>
             {
                 x.childControlWidth = childControlWidth;
@@ -119,7 +119,7 @@ namespace Altimit.UI
         public static Node SetSortingOrder(this Node node, int sortingOrder)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Canvas().Hold<Canvas>(x => { x.overrideSorting = true; x.sortingOrder = sortingOrder; }).Hold<GraphicRaycaster>().Hold<OverrideCanvasHelper>();
 #elif GODOT
             */
@@ -136,7 +136,7 @@ namespace Altimit.UI
         public static Node FitWidth(this Node node)
         {
 
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<ContentSizeFitter>(x => x.horizontalFit = ContentSizeFitter.FitMode.PreferredSize);
 #elif GODOT
 
@@ -148,7 +148,7 @@ namespace Altimit.UI
         public static Node SetSprite(this Node node, Sprite sprite = null)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<Image>(x => x.sprite = sprite);
 #elif GODOT
             */
@@ -168,7 +168,7 @@ namespace Altimit.UI
         */
         public static Font GetFont(string name)
         {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return new Font(Resources.Load<TMPro.TMP_FontAsset>("Fonts/" + name));
 #elif GODOT
             return null;
@@ -182,7 +182,7 @@ namespace Altimit.UI
             if (name == null)
                 return null;
 
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return new Sprite(Resources.Load<UnityEngine.Sprite>($"Sprites/{name}"));
 #elif GODOT
             return null;
@@ -193,9 +193,9 @@ namespace Altimit.UI
 
         public static Material GetMaterial(string name, bool isNew = false)
         {
-#if UNITY
+#if UNITY_64
             var uMaterial = Resources.Load<UnityEngine.Material>("Materials/" + name);
-            if (isNew && Application.isPlaying)
+            if (isNew && UnityEngine.Application.isPlaying)
                 uMaterial = new UnityEngine.Material(uMaterial);
             return new Material(uMaterial);
 #elif GODOT
@@ -208,7 +208,7 @@ namespace Altimit.UI
         public static AudioStream GetSound(string name)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return Resources.Load<AudioStream>("Sounds/" + name);
 #elif GODOT
             return null;
@@ -222,7 +222,7 @@ namespace Altimit.UI
         {
             get
             {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
                 return A.New().Hold<RectTransform>(x=>x.gameObject.layer = LayerMask.NameToLayer("UI"));
 #elif GODOT
                 return A.New();
@@ -234,7 +234,7 @@ namespace Altimit.UI
         public static Node SetAlpha(this Node node, float alpha)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return node.Hold<Image>(x => x.color = x.color.SetAlpha(alpha));
 #elif GODOT
             return null;

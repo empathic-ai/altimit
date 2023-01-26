@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
-#if UNITY
+#if UNITY_64
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Altimit.UI.Unity {
 
-public class Element : UIBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerUpHandler, IPointerDownHandler {
+public class Element : UIBehaviour {//, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerUpHandler, IPointerDownHandler {
 
     public delegate void OnPointerEvent(PointerEventData eventData);
     // public delegate void ControllerInteractionEvent(ControllerInteractionEventArgs e);
@@ -53,7 +53,7 @@ public class Element : UIBehaviour, IPointerEnterHandler, IPointerExitHandler, I
 
     protected override void Awake()
     {
-        if (!Application.isPlaying)
+        if (!UnityEngine.Application.isPlaying)
             return;
 
         // oldRect = rectTransform.rect;

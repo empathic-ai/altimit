@@ -19,7 +19,7 @@ namespace Altimit.UI
         /*
         public static Node Update(this Node node)
         {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             LayoutRebuilder.ForceRebuildLayoutImmediate(node.Get<RectTransform>());
             return node;
 #elif GODOT
@@ -117,7 +117,7 @@ namespace Altimit.UI
         public static Node HoldFirst(this Node node, params Node[] children)
         {
             
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             children.ToList().ForEach(x => { x.SetParent(node, true, true, true); x.transform.SetAsFirstSibling(); });
             return node;
 #elif GODOT
@@ -154,7 +154,7 @@ namespace Altimit.UI
         public static Node Release(this Node node)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             node.transform.DetachChildren();
             return node;
 #elif GODOT
@@ -175,7 +175,7 @@ namespace Altimit.UI
         public static Node AddOrGet(this Node node, Type type, bool includeChildren = false)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             var comp = node.Get(type, includeChildren);
             if (comp == null)
                 return node.gameObject.AddComponent(type);
@@ -202,7 +202,7 @@ namespace Altimit.UI
         public static T GetInParent<T>(this Node node) where T : Node
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return (node == null ? null : node.GetComponentInParent<T>());
 #elif GODOT
             return null;
@@ -215,7 +215,7 @@ namespace Altimit.UI
         public static T[] GetInParents<T>(this Node node) where T : Node
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             return (node == null ? new T[0] : node.GetComponentsInParent<T>());
 #elif GODOT
             return null;
@@ -233,7 +233,7 @@ namespace Altimit.UI
         public static Node Get(this Node node, Type type, bool includeChildren = false)
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             if (node == null)
                 throw new Exception("Tried setting component on a null Node!");
             if (includeChildren)
@@ -271,7 +271,7 @@ namespace Altimit.UI
                 func(node);
             });
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             node.Hold<ParentObserver>(x =>
             {
                 x.onUpdateSingle += func;
@@ -297,7 +297,7 @@ namespace Altimit.UI
         /*
         public static Node SetParent(this Node node, Node parent, bool setPosition = false, bool setRotation = false, bool setScale = false)
         {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             node.transform.SetParent(parent.transform);
             if (setPosition)
                 node.transform.localPosition = Vector3.zero;

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Altimit.UI;
 using System.Xml.Linq;
+#if WEB
 using Microsoft.AspNetCore.Components.Rendering;
+#endif
 
-#if UNITY
+#if UNITY_64
 using Altimit.UI.Unity;
 using Altimit;
 using TMPro;
@@ -90,7 +92,7 @@ namespace Altimit.UI
             GameObject.Hold<InputFix>();
 
             this.SetHeight(AUI.TinySize + (AUI.SmallSpace * 2)).
-                FlexibleWidth();
+                ExpandWidth();
 
             GameObject.AddChildren(
                     //AUI.UI.RoundImage().IgnoreLayout().SetSprite(AUI.GetSprite("Circle Outline")).SetMaterial(useBorder ? AUI.Grey : AUI.None).OnHeld(x => x.Stretch()),

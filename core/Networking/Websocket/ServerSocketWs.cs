@@ -86,7 +86,7 @@ namespace Altimit.Networking
                 throw new Exception("A certificate.pfx file for this WebSocket server has not been added to the directory of this application! Please add it.", e);
             }
 
-            
+            /*
             wsServer.AddWebSocketService<ServerPeerWs>("/w", peer =>
             {
                 Updater.Instance.OnNextUpdate(() =>
@@ -95,8 +95,9 @@ namespace Altimit.Networking
                     peer.Disconnected += PeerDisconnected;
                 });
             });
+            */
 
-            /*
+            
             wsServer.AddWebSocketService("/w", () =>
             {
                 var peer = new ServerPeerWs();
@@ -107,7 +108,7 @@ namespace Altimit.Networking
                 });
                 return peer;
             });
-            */
+            
 
             wsServer.Start();
 #endif

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-#if UNITY
+#if UNITY_64
 using UnityEngine;
 using UnityEngine.UI;
 using Altimit.UI.Unity;
@@ -37,7 +37,7 @@ namespace Altimit.UI
             base.SetVisibility(isVisible);
 
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             gameObject.SetActive(isVisible);
 #endif
             */
@@ -62,7 +62,7 @@ namespace Altimit.UI
         {
             return this;
         }
-#if UNITY
+#if UNITY_64
         [AProperty]
         public RenderMode RenderMode
         {
@@ -77,7 +77,7 @@ namespace Altimit.UI
         }
 
         /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
                 [HideInInspector]
 #endif
         */
@@ -108,7 +108,7 @@ namespace Altimit.UI
             base.Start();
 
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             gameObject.layer = LayerMask.NameToLayer("UI");
 #endif
             */
@@ -138,7 +138,7 @@ namespace Altimit.UI
         public virtual void Clear()
         {
             /*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
             isRendered = false;
             for (int i = 0; i < transform.childCount; i++)
             {

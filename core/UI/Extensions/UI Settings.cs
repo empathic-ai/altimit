@@ -1,5 +1,5 @@
 ﻿/*
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
 using TMPro;
 using UnityEngine;
 using Material = UnityEngine.Material;

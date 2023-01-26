@@ -6,9 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Microsoft.AspNetCore.Components;
 
-#if UNITY
+#if UNITY_64
 using UnityEngine;
 using UnityEngine.UI;
 using Altimit.UI.Unity;
@@ -16,6 +15,7 @@ using UnityEngine.EventSystems;
 #elif GODOT
 using Godot;
 #elif WEB
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 #endif
 
@@ -24,21 +24,86 @@ namespace Altimit.UI
     [AType(true)]
     public class Control : Node
     {
-#if UNITY
+#if UNITY_64
+        [AProperty]
+        public bool IsVisible
+        {
+            get
+            {
+                return GameObject.activeSelf;
+            }
+            set
+            {
+                GameObject.SetActive(value);
+            }
+        }
+
+        public Vector2 Position
+        {
+            get
+            {
+                return new Vector2(GameObject.transform.position.x, GameObject.transform.position.y);
+            }
+            set
+            {
+                GameObject.transform.position = new Vector3(value.x, value.y, 0);
+            }
+        }
+
+        [AProperty]
+        public Vector2 LocalPosition
+        {
+            get
+            {
+                return new Vector2(GameObject.transform.localPosition.x, GameObject.transform.localPosition.y);
+            }
+            set
+            {
+                GameObject.transform.localPosition = new UnityEngine.Vector3(value.x, value.y, 0);
+            }
+        }
+
+        [AProperty]
+        public float Width
+        {
+            get
+            {
+                return rectTransform.rect.width;
+            }
+            set
+            {
+                rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, value);
+                layoutElement.preferredWidth = value;
+                rectTransform.ForceUpdateRectTransforms();
+            }
+        }
+
+        [AProperty]
+        public float Height
+        {
+            get
+            {
+                return rectTransform.rect.height;
+            }
+            set
+            {
+                rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, value);
+                layoutElement.preferredHeight = value;
+                rectTransform.ForceUpdateRectTransforms();
+            }
+        }
+
         [AProperty]
         public Vector2 Size
         {
             get
             {
-                return new Vector2(rectTransform.rect.width, rectTransform.rect.height);
+                return new Vector2(Width, Height);
             }
             set
             {
-                rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, value.x);
-                rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, value.y);
-                layoutElement.preferredWidth = value.x;
-                layoutElement.preferredHeight = value.y;
-                rectTransform.ForceUpdateRectTransforms();
+                Width = value.x;
+                Height = value.y;
             }
         }
 
@@ -68,17 +133,8 @@ namespace Altimit.UI
             }
         }
 
-        public bool FlexibleSize
-        {
-            set
-            {
-                FlexibleWidth = value;
-                FlexibleHeight = value;
-            }
-        }
-
         [AProperty]
-        public bool FlexibleWidth
+        public bool ExpandWidth
         {
             get
             {
@@ -91,13 +147,7 @@ namespace Altimit.UI
         }
 
         [AProperty]
-        public virtual bool IsClickable
-        {
-            get; set;
-        } = false;
-
-        [AProperty]
-        public bool FlexibleHeight
+        public bool ExpandHeight
         {
             get
             {
@@ -108,6 +158,12 @@ namespace Altimit.UI
                 layoutElement.flexibleHeight = value ? 1 : -1;
             }
         }
+
+        [AProperty]
+        public virtual bool IsClickable
+        {
+            get; set;
+        } = false;
 
         //[AProperty]
         //public Vector2 OffsetMin { get; set; }
@@ -194,7 +250,7 @@ namespace Altimit.UI
         {
             if (IsDraggable)
             {
-                Position += new Vector3(eventData.delta.x, eventData.delta.y, 0);
+                Position += eventData.delta;
             }
         }
 

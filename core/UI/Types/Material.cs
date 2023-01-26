@@ -8,7 +8,7 @@ namespace Altimit.UI
 {
     public class Material
     {
-#if UNITY
+#if UNITY_64
         public UnityEngine.Material UMaterial;
 
         public Material(UnityEngine.Material uMaterial)

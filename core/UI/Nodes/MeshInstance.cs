@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#if UNITY
+#if UNITY_64
 using UnityEngine;
 using UnityEngine.UI;
 using Altimit.UI.Unity;
@@ -12,13 +12,10 @@ using Altimit.UI.Unity;
 namespace Altimit.UI
 {
     [AType]
-    public class Camera : Node3D
+    public class MeshInstance : Node3D
     {
-        protected UnityEngine.Camera camera { get; private set; }
-
-        public Camera() : base()
+        public MeshInstance() : base()
         {
-            camera = GameObject.AddComponent<UnityEngine.Camera>();
         }
     }
 }

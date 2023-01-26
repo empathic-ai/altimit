@@ -8,7 +8,7 @@ namespace Altimit.Serialization.LZ4
 {
     internal partial class LZ4Codec
     {
-#if UNITY_2018_3_OR_NEWER
+#if UNITY_64_2018_3_OR_NEWER
 
         // use 'Safe' code for Unity because in IL2CPP gots strange behaviour.
 

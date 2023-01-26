@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#if UNITY
+#if UNITY_64
 using UnityEngine;
 using UnityEngine.UI;
 using Altimit.UI.Unity;
-using SoftMasking;
+//using SoftMasking;
 #endif
 
 namespace Altimit.UI
@@ -16,7 +16,7 @@ namespace Altimit.UI
     [AType(true)]
     public class ColorRect : Control
     {
-#if UNITY
+#if UNITY_64
         public Color Color { get; set; }
 
         //Todo: add back in once Material is consistent rather than always new instance
@@ -66,7 +66,7 @@ namespace Altimit.UI
         //protected SoftMask mask { get; private set; }
         protected Mask mask { get; private set; }
 
-        public Image() : base()
+        public ColorRect() : base()
         {
             image = GameObject.AddComponent<UnityEngine.UI.Image>();
             image.raycastTarget = false;

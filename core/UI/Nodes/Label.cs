@@ -9,7 +9,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-#if UNITY
+#if UNITY_64
 using Altimit.UI.Unity;
 
 namespace Altimit.UI

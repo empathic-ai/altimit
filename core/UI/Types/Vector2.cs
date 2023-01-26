@@ -24,10 +24,10 @@ namespace Altimit.UI
         public static Vector2 One = new Vector2(1, 1);
 
         [AProperty]
-        public float x { get; set; } = 0;
+        public float x { get; set; }
 
         [AProperty]
-        public float y { get; set; } = 0;
+        public float y { get; set; }
 
         public Vector2(float x, float y)
         {
@@ -114,7 +114,7 @@ namespace Altimit.UI
             return a.x * b.x + a.y * b.y;
         }
 
-#if UNITY
+#if UNITY_64
         public static explicit operator Vector2(UnityEngine.Vector2 v)
         {
             return new Vector2(v.x, v.y);

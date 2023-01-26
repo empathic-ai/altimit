@@ -1,7 +1,7 @@
-﻿#if UNITY
+﻿#if UNITY_64
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
+//using DG.Tweening;
 using System.Threading.Tasks;
 
 namespace Altimit.UI.Unity
@@ -43,9 +43,11 @@ namespace Altimit.UI.Unity
         {
         }
 
+        bool wasContentExtending = false;
+
         void SnapOff()
         {
-            sequence?.Kill();
+            //sequence?.Kill();
             layoutGroup.padding.right = -(scrollBarWidth+10);
             canvasGroup.alpha = 0;
             LayoutRebuilder.ForceRebuildLayoutImmediate(layoutGroup.GetComponent<RectTransform>());
@@ -57,9 +59,10 @@ namespace Altimit.UI.Unity
             return rectTransform.rect.height < scrollRect.content.rect.height;
         }
 
+        // TODO: Reimpliment with a new tweening system
+        /*
         Sequence sequence;
-        bool wasContentExtending = false;
-
+ 
         // Update is called once per frame
         void Update()
         {
@@ -91,6 +94,7 @@ namespace Altimit.UI.Unity
             }
             
         }
+        */
     }
 }
 #endif

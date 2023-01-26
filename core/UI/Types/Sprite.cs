@@ -8,7 +8,7 @@ namespace Altimit.UI
 {
     public class Sprite
     {
-#if UNITY_5_3_OR_NEWER
+#if UNITY_64
         public UnityEngine.Sprite USprite;
         
         public Sprite(UnityEngine.Sprite uSprite) {
