@@ -159,9 +159,9 @@ Language | Support |
 --- | --- | 
 C# | Supported ✔️ |
 Javascript | Planned ➡️ |
+C++ | Planned ➡️ |
 Python | Pending |
 Swift | Pending |
-C++ | Pending |
 
 ## The Engine (Planned)
 
