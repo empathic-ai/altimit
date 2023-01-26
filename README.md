@@ -46,7 +46,7 @@ Data is automatically cached locally and remotely.
 
 ### Seamless RPCs
  
-Calling methods on remote objects is as intuitive as calling methods on local ones.
+Calling methods on remote objects is as easy as calling methods on local ones.
 ```C#
 
 // On the client:
