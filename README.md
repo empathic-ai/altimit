@@ -19,7 +19,7 @@ Altimit is a flexible and lightweight framework for building an open Metaverse. 
 
 ### Intuitive Replication
  
-Describe the data you want synchronized between applications using basic property attributes or a fluent API. Just label what you want replicated and Altimit's replication system handles the rest.
+Describe the data you want synchronized between applications using basic property attributes. Altimit's replication system will automatically synchronize it.
 
 ```C#
 [AType]
