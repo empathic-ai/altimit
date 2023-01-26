@@ -46,20 +46,8 @@ Data is automatically cached locally and remotely.
 
 ### Seamless RPCs
  
-Calling methods on remote classes is as intuitive as calling methods on local ones.
+Calling methods on remote objects is as intuitive as calling methods on local ones.
 ```C#
-// The interface of a server
-[AType]
-public interface IServer
-{
-
-    [AMethod]
-    Task<User> SignIn(string email, string password);
-    
-    [AMethod]
-    Task Logout();
-    
-}
 
 // On the client:
 public class Client {
