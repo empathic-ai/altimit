@@ -138,21 +138,21 @@ Unlike some [other](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omn
 
 ## Compatibility / Plugins
 
-Altimit is available as a plugin for Godot and Unity. Support is planned for Native Web in the near future. If you'd like to see support for another platform or language, please consider contributing to the project!
+Altimit is available as a plugin for Godot and Unity. Support is planned for Unreal Engine and Native Web in the near future. If you'd like to see support for another platform or language, please consider contributing to the project!
 
  <i>As of now, C# is the primary language supported.</i>
  
 Platform | Support |
 --- | --- | 
-Godot | Supported ✔️ |
-Unity | Supported ✔️ |
+Godot Engine | Supported ✔️ |
+Unity Engine | Supported ✔️ |
+Unreal Engine | Planned ➡️ |
 Native Web | Planned ➡️ |
 Native iOS | Pending |
 Native macOS | Pending |
 Native Windows | Pending |
 Native Linux | Pending |
 Native Android | Pending  |
-Unreal | Pending |
 Blender | Pending |
 
 Language | Support |
