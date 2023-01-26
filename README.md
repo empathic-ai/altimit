@@ -145,10 +145,11 @@ Platform | Support |
 --- | --- | 
 Godot | Supported ✔️ |
 Unity | Supported ✔️ |
-Native Windows | Supported ✔️ |
-Native Linux | Supported ✔️ |
-Native macOS | Planned ➡️ |
-Native iOS | Planned ➡️ |
+Native Web | Planned ➡️ |
+Native iOS | Pending |
+Native macOS | Pending |
+Native Windows | Pending |
+Native Linux | Pending |
 Native Android | Pending  |
 Unreal | Pending |
 Blender | Pending |
