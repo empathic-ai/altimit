@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 #if UNITY_64
-#if UNITY_64
 using UnityEngine;
 using Altimit.UI.Unity;
 #endif

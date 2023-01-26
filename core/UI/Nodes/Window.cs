@@ -141,29 +141,26 @@ namespace Altimit.UI {
 
         Image highlightImage { get; set; }
 
-#if TEMP
-        public Canvas Canvas
-        {
-            get
-            {
-                return canvasGO.GetComponent<Canvas>();
-            }
-        }
+        /*
+                public Canvas Canvas
+                {
+                    get
+                    {
+                        return canvasGO.GetComponent<Canvas>();
+                    }
+                }
 
-        public Element Element
-        {
-            get
-            {
-                return canvasGO.AddOrGet<Element>();
-            }
-        }
-#endif
+                public Element Element
+                {
+                    get
+                    {
+                        return canvasGO.AddOrGet<Element>();
+                    }
+                }
+        */
 
 #if UNITY_64
         //protected Sequence sequence;
-#elif WEB
-#if UNITY
-        protected Sequence sequence;
 #elif WEB
 
         protected override void BuildRenderTree(RenderTreeBuilder builder)
@@ -177,7 +174,7 @@ namespace Altimit.UI {
             //builder.CloseRegion();
             builder.CloseElement();
         }
-
+#endif
         public void ToggleVisibility()
         {
             throw new System.NotImplementedException();

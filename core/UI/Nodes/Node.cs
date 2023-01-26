@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Altimit;
 #if UNITY_64
-#if UNITY_64
 using UnityEngine;
 using Altimit.UI.Unity;
 #elif WEB
@@ -139,7 +138,8 @@ namespace Altimit.UI
         }
 
         public Godot.Node GDNode;
-#else
+#endif
+
 #if WEB
 
         [Parameter]
@@ -149,7 +149,6 @@ namespace Altimit.UI
         {
             get; set;
         }
-#endif
 
         public Node() : base()
         {
@@ -167,11 +166,7 @@ namespace Altimit.UI
             Updater.Instance.OnNextUpdate(Start);
         }
 
-#if UNITY_64
-
-        public GameObject GameObject = new GameObject();
-
-#elif GODOT
+#if GODOT
         protected virtual Godot.Node GenerateGDNode()
         {
             return new Godot.Node();
