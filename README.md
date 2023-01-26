@@ -128,7 +128,7 @@ Unlike [current](https://docs.omniverse.nvidia.com/prod_kit/common/NVIDIA_Omnive
 
 Altimit is available as a plugin for Godot and Unity. Support is planned for Unreal Engine and Native Web in the near future. If you'd like to see support for another platform or language, please consider contributing to the project!
 
- <i>As of now, C# is the primary language supported.</i>
+ <i>As of now, C# is the primary programming language supported.</i>
  
 Platform | Support |
 --- | --- | 
