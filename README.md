@@ -84,7 +84,7 @@ public class Server : IServer {
 ```
 ### Distributed Computing
  
-Built-in mesh networking enables large-scale simulations and versatile network architectures (centralized or decentralized).
+Built-in mesh networking enables versatile network architectures (centralized or decentralized).
 
 <p align="center">
     <img src="networking.png" width="500" alt="Networking">
