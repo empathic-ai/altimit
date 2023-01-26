@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-#if UNITY_2017_1_OR_NEWER
+#if UNITY_64
 namespace Altimit.UI.Unity
 {
     [ExecuteInEditMode]

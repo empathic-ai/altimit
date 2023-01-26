@@ -12,13 +12,10 @@ using Altimit.UI.Unity;
 namespace Altimit.UI
 {
     [AType]
-    public class Camera : Node3D
+    public class MeshInstance : Node3D
     {
-        protected UnityEngine.Camera camera { get; private set; }
-
-        public Camera() : base()
+        public MeshInstance() : base()
         {
-            camera = GameObject.AddComponent<UnityEngine.Camera>();
         }
     }
 }

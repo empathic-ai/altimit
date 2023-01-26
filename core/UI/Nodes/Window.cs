@@ -3,6 +3,8 @@
 #if UNITY
 using Altimit.UI.Unity;
 using DG.Tweening;
+#else
+using Microsoft.AspNetCore.Components.Rendering;
 #endif
 
 using Altimit;
@@ -10,7 +12,6 @@ using Altimit.UI;
 using Altimit.Networking;
 using System.Runtime.CompilerServices;
 using System.Net;
-using Microsoft.AspNetCore.Components.Rendering;
 
 namespace Altimit.UI {
     public class Window : Node
@@ -160,17 +161,7 @@ namespace Altimit.UI {
 
 #if UNITY
         protected Sequence sequence;
-#endif
-
-        //[SerializeField]
-        protected Node3D renderGO;
-        //[SerializeField]
-        protected Node3D canvasGO;
-        /*
-        protected override void Render() {
-
-        }
-        */
+#elif WEB
 
         protected override void BuildRenderTree(RenderTreeBuilder builder)
         {
@@ -183,6 +174,18 @@ namespace Altimit.UI {
             //builder.CloseRegion();
             builder.CloseElement();
         }
+
+#endif
+
+        //[SerializeField]
+        protected Node3D renderGO;
+        //[SerializeField]
+        protected Node3D canvasGO;
+        /*
+        protected override void Render() {
+
+        }
+        */
 
         public void ToggleVisibility()
         {

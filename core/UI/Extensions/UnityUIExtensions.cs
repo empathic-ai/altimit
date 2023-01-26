@@ -1,5 +1,6 @@
-﻿#if UNITY_2017_1_OR_NEWER
-using LeTai.TrueShadow;
+﻿#if UNITY_64
+//Uncomment
+//using LeTai.TrueShadow;
 using System;
 using System.Linq;
 using System.Threading.Tasks;

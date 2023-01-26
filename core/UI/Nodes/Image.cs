@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Altimit.UI.Unity;
-using SoftMasking;
+//using SoftMasking;
 #endif
 
 namespace Altimit.UI
@@ -16,7 +16,7 @@ namespace Altimit.UI
     [AType(true)]
     public class Image : Control
     {
-#if UNITY
+#if UNITY_64
         public Sprite Sprite {
             get
             {
@@ -100,7 +100,7 @@ namespace Altimit.UI
         {
             return new Godot.TextureRect() { MouseFilter = Godot.Control.MouseFilterEnum.Pass };
         }
-#endif
+#else
         public Sprite Sprite { get; internal set; }
         public ImageType ImageType { get; internal set; }
         public bool IgnoreLayout { get; internal set; }
@@ -109,5 +109,6 @@ namespace Altimit.UI
         public bool UseShadow { get; internal set; }
         public bool IsClickable { get; internal set; }
         public bool IsMask { get; internal set; }
+#endif
     }
 }

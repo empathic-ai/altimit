@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Altimit.UI.Unity;
-using SoftMasking;
+//using SoftMasking;
 #endif
 
 namespace Altimit.UI
@@ -66,7 +66,7 @@ namespace Altimit.UI
         //protected SoftMask mask { get; private set; }
         protected Mask mask { get; private set; }
 
-        public Image() : base()
+        public ColorRect() : base()
         {
             image = GameObject.AddComponent<UnityEngine.UI.Image>();
             image.raycastTarget = false;

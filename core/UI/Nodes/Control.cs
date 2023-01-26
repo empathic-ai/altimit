@@ -6,8 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using Microsoft.AspNetCore.Components;
-
 #if UNITY
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +14,7 @@ using UnityEngine.EventSystems;
 #elif GODOT
 using Godot;
 #elif WEB
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 #endif
 

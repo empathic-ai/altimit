@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Altimit.UI;
 using System.Xml.Linq;
-using Microsoft.AspNetCore.Components.Rendering;
 
 #if UNITY
 using Altimit.UI.Unity;
@@ -56,7 +55,7 @@ namespace Altimit.UI
             {
                 tmpInputField.inputType = (TMP_InputField.InputType)value;
             }
-        }
+        } 
 
         public Action<string> OnValueChanged;
 

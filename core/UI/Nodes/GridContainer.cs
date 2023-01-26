@@ -15,6 +15,16 @@ namespace Altimit.UI
     public class GridContainer : Container
     {
 #if UNITY
+        public override Anchor ContainerAnchor { get; set; }
+        public override bool ExpandChildWidth { get; set; }
+        public override bool ExpandChildHeight { get; set; }
+        public override bool FitWidth { get; set; }
+        public override bool FitHeight { get; set; }
+        public override float Padding { get; set; }
+        public override float Spacing
+        {
+            get; set;
+        }
 #elif GODOT
         public int Columns
         {

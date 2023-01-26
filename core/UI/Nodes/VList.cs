@@ -20,7 +20,7 @@ namespace Altimit.UI
 
 #if UNITY
         [AProperty]
-        public override Anchor Anchor
+        public override Anchor ContainerAnchor
         {
             get
             {

@@ -8,7 +8,6 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Altimit.UI.Unity;
-using SoftMasking;
 
 namespace Altimit.UI
 {
