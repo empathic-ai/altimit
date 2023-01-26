@@ -6,9 +6,6 @@
 // Mac system files
 *.DS_Store
 
-// Unity files
-*.meta
-
 # User-specific files
 *.rsuser
 *.suo
