@@ -20,7 +20,7 @@
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
-    <DefineConstants>$(DefineConstants)TRACE;UNITY_64</DefineConstants>
+    <DefineConstants>$(DefineConstants)TRACE;UNITY</DefineConstants>
   </PropertyGroup>
   
   <ItemGroup>
@@ -31,19 +31,5 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="TextCopy" Version="6.2.1" />
     <PackageReference Include="WebSocketSharp-netstandard" Version="1.0.1" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <ProjectReference Include="..\generator\altimit.generator.csproj" />
-    <ProjectReference Include="..\unity-webrtc\unity-webrtc.csproj" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Resources\PackageManager\ProjectTemplates\libcache\com.unity.template.2d-6.1.0\Bee\artifacts\1900b0aE.dag\post-processed\UnityEngine.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>

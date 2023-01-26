@@ -17,7 +17,7 @@ using UnityEngine.UI;
 namespace Altimit.UI
 {
     [AType]
-    public class Input : Control
+    public class InputField : Control
     {
         [AProperty]
         public string Placeholder
@@ -63,7 +63,7 @@ namespace Altimit.UI
         protected TMPro.TMP_InputField tmpInputField { get; private set; }
         protected TMPro.TextMeshProUGUI placeholderText { get; private set; }
 
-        public Input() : base()
+        public InputField() : base()
         {
             bool isSingleLine = true;
             string placeholder = "";
