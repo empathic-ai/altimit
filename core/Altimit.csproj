@@ -38,24 +38,6 @@
   
   <ItemGroup>
     <ProjectReference Include="..\generator\altimit.generator.csproj" />
-    <ProjectReference Include="..\unity-webrtc\unity-webrtc.csproj" />
-    <ProjectReference Include="..\unity-textmeshpro\unity-textmeshpro.csproj" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Reference Include="UnityEngine">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Data\Resources\PackageManager\ProjectTemplates\libcache\com.unity.template.2d-6.1.0\Bee\artifacts\1900b0aE.dag\post-processed\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>..\unity-textmeshpro\Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>..\dotween\DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Unity3D" />
